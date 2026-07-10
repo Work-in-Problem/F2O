@@ -75,10 +75,28 @@ claude plugin install f2o@f2o</pre>
       <span class="badge">B</span>
       <div>
         <b>npx skills</b>
-        <div class="dim small"><span class="lang-th">ได้เฉพาะ skills 13 ตัว — ต้อง copy กฎแกน (Layer 0) เองตามทาง C ขั้น 2</span><span class="lang-en">Skills only — copy the Layer-0 core rules yourself (step 2 of option C)</span></div>
+        <div class="dim small"><span class="lang-th">ครบทุกชั้นเท่าทาง A — skills 13 ตัว + กฎแกนฉีดอัตโนมัติทุก session + claim-gate hook (ระดับ user)</span><span class="lang-en">The full stack, same as A — 13 skills + core rules auto-injected each session + the claim-gate hook (user-level)</span></div>
       </div>
     </div>
+    <p class="small"><span class="lang-th">ขั้น 1 — skills 13 ตัว:</span><span class="lang-en">Step 1 — the 13 skills:</span></p>
     <pre class="code" data-copy>npx skills add Work-in-Problem/F2O --all -y -g</pre>
+    <p class="small"><span class="lang-th">ขั้น 2 — กฎแกนฉีดทุก session + hook (คำสั่งเดียว copy ทั้งก้อน · รันซ้ำได้ ไม่เบิ้ล):</span><span class="lang-en">Step 2 — per-session core injection + the hook (one paste, idempotent):</span></p>
+    <pre class="code" data-copy>git clone --depth 1 https://github.com/Work-in-Problem/F2O /tmp/f2o-src
+mkdir -p ~/.claude/f2o &amp;&amp; cp -R /tmp/f2o-src/hooks /tmp/f2o-src/core ~/.claude/f2o/ &amp;&amp; rm -rf /tmp/f2o-src
+python3 - &lt;&lt;'PY'
+import json, os
+p = os.path.expanduser('~/.claude/settings.json')
+s = json.load(open(p)) if os.path.exists(p) else {}
+h = s.setdefault('hooks', {})
+def add(ev, cmd):
+    arr = h.setdefault(ev, [])
+    if not any(cmd in json.dumps(x) for x in arr):
+        arr.append({'hooks': [{'type': 'command', 'command': cmd, 'timeout': 30}]})
+add('SessionStart', 'python3 ~/.claude/f2o/hooks/session_context.py')
+add('Stop', 'python3 ~/.claude/f2o/hooks/claim_gate.py')
+json.dump(s, open(p, 'w'), indent=2); print('F2O hooks -&gt; ' + p)
+PY</pre>
+    <p class="small dim"><span class="lang-th">สายทาง A ข้ามขั้น 2 (plugin มีครบแล้ว — ทำซ้ำจะฉีดกฎซ้ำสองรอบ) · ปิดชั่วคราว: <code>touch ~/.claude/f2o.disabled</code> เปิดกลับ: <code>rm</code> ไฟล์เดิม · ถอน: ลบ 2 hooks ที่เพิ่มใน <code>~/.claude/settings.json</code> แล้ว <code>rm -rf ~/.claude/f2o</code></span><span class="lang-en">Route-A users skip step 2 (the plugin already ships it — doing both injects the core twice) · pause: <code>touch ~/.claude/f2o.disabled</code>, resume: <code>rm</code> that file · uninstall: remove the 2 added hooks from <code>~/.claude/settings.json</code> and <code>rm -rf ~/.claude/f2o</code></span></p>
   </div>
 
   <div class="card">
