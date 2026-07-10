@@ -5,6 +5,16 @@
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-07-11 · "The Conductor Release"
+### Added
+- **สกิลที่ 14: `conducting-agent-fleets`** (`/f2o:caf`) — คุมงาน multi-agent ระยะยาว: ค้นหา dispatch surface ก่อนยอมทำ serial (รวมเครื่องมือที่ซ่อนอยู่หลัง ToolSearch), conductor stance, แบ่ง campaign เป็น phase ที่ resume ได้, ทำงานต่อระหว่างรอ, background-first, verification ตามความเสี่ยง — พัฒนาจากการวิเคราะห์มิติพฤติกรรมที่ถูก descope ไว้ตั้งแต่ v1.0 (sustained async orchestration) และผ่านการยืนยันช่องว่างด้วย baseline-first gate ก่อนลงมือเขียน
+- **หลักฐานแบบ pre-registered ตัวที่สอง:** งาน 4 แพ็กเกจอิสระ — Opus เปล่า fan-out **0/5** (ทำเรียงเดี่ยวทุกครั้งทั้งที่ Agent tool อยู่ห่างแค่ ToolSearch เดียว) vs ติดสกิล **5/5** (ยิง 4 agents ใน burst เดียวทุกครั้ง), Fisher one-tailed **p=0.004** · เร็วขึ้น ~25% คุณภาพเท่าเดิม (4/4 ทั้งคู่) · guard: ไม่สร้างนิสัย delegate มั่ว — fixture เล็กกว่าเกณฑ์ C4 สกิลเลือกทำเองถูกต้อง 5/5
+- **Methodology ใหม่: baseline-first gate** — วัด bare ก่อน author เสมอ; รอบนี้ gate ฆ่า candidate ไป 1 ตัว (`settling-questions-empirically` — Opus ทำเองได้ 5/5) และยืนยันช่องว่างจริง 1 ตัวก่อนลงแรงเขียน
+- Fixtures + graders ใหม่ 3 ชุด (fanout-migration, poisoned-report, empirical-choice) — ทำซ้ำ/หักล้างได้ทั้งหมด
+### Notes
+- Layer-0 digest อัพเดต router ครบ 14 สกิล (1933/1950 bytes) · hook suite 32/32 · เอกสารผลทั้งหมดใน `evals/results/2026-07-11-*`
+
+
 ## [1.3.0] — 2026-07-10 · "The Validation Release"
 ### Added
 - **ผลการทดลองยืนยันประสิทธิผล (pre-registered):** พฤติกรรม "เห็นปัญหาข้างเคียง → รายงานโดยไม่แตะ" — Opus เปล่าแท้ **0/10** vs F2O **10/10**, Fisher's exact one-tailed **p≈5.4×10⁻⁶** พร้อม dose-response 4 ระดับ (0/10 → 1/5 → 9/10 → 10/10) · ผลรอง: F2O เปลี่ยนวิธีวินิจฉัย flaky bug (amplification 0/5 → 5/5) · เอกสารเต็ม: `evals/results/` (PREREG commit ก่อนรันทุกรอบ ตรวจย้อนได้ใน git)

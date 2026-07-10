@@ -1,7 +1,7 @@
 # Fable2Opus (F2O)
 
 **Teach Opus-tier models the working processes of stronger models.**
-สอน Claude Opus 4.8 ให้ทำงานด้วย "กระบวนการ" ระดับ Fable 5 — 13 process skills + กฎแกน always-on + hook กันหลอกว่าเสร็จ
+สอน Claude Opus 4.8 ให้ทำงานด้วย "กระบวนการ" ระดับ Fable 5 — 14 process skills + กฎแกน always-on + hook กันหลอกว่าเสร็จ
 
 > The honest tagline: *"Opus at its own ceiling, reliably — not Fable at half price."*
 > Skills transfer **discipline**, not raw intelligence. ~50–60% of the observable behavior gap
@@ -48,10 +48,10 @@ hard-off: `claude plugin disable f2o@f2o`
 | Layer | What | Where |
 |---|---|---|
 | **0 — Core rules** (always-on) | Claim audit — no "done" without tool-result evidence · autonomy triage (Class A/B/C) · single working-notes file · canonical constants C1–C18 · skill router | [core/CLAUDE-core.md](core/CLAUDE-core.md) + [core/constants.md](core/constants.md) — injected automatically by the plugin's SessionStart hook |
-| **1 — Skills** (load on demand) | 13 process skills, each a distilled working process with trigger conditions, escape hatches, and cross-references | [skills/](skills/) |
+| **1 — Skills** (load on demand) | 14 process skills, each a distilled working process with trigger conditions, escape hatches, and cross-references | [skills/](skills/) |
 | **2 — Enforcement** | `claim_gate.py` Stop hook — blocks "done/fixed/passes" messages whose last edit postdates the last verification, and promise-shaped endings ("I'll now…") · 28 tests | [hooks/](hooks/) |
 
-## The 13 skills
+## The 14 skills
 
 | Skill | One line |
 |---|---|
@@ -63,6 +63,7 @@ hard-off: `claude plugin disable f2o@f2o`
 | `root-causing-bugs` | Hypothesis ledger, one-variable experiments, statistical flake protocol, upstream root-cause walk |
 | `reviewing-code` | Enumerate all findings first, filter only at reporting time; verify each finding against source |
 | `delegating-parallel-work` | Fan out genuinely independent workstreams to sub-agents; trust-but-verify the union |
+| `conducting-agent-fleets` | คุมกองทัพ agent ระยะยาว: หา dispatch surface ก่อนยอม serial, ยิงขนาน+ทำงานต่อระหว่างรอ, background-first, resume ได้ |
 | `managing-working-memory` | One notes file that survives compaction; memory sweep at start, lesson harvest at end |
 | `outcome-first-reporting` | Verdict first, "Not done" section early, every claim carries its evidence |
 | `producing-deliverables` | Profile data before computing, cross-foot every headline number, reopen the file before "done" |

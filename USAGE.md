@@ -63,7 +63,7 @@ claude plugin install f2o@f2o
 
 **ช่องทาง B — npx skills (ครบทุกชั้นได้ใน 2 ขั้น):**
 
-ขั้น 1 — skills 13 ตัว (เจาะจง Claude Code · อยากลงทุก agent ใช้ `--all` แทน — บรรทัดแดงของ
+ขั้น 1 — skills 14 ตัว (เจาะจง Claude Code · อยากลงทุก agent ใช้ `--all` แทน — บรรทัดแดงของ
 `eve`/`promptscript` ไม่เป็นอันตราย):
 ```
 npx skills add Work-in-Problem/F2O -g -y --skill '*' --agent claude-code
@@ -92,13 +92,13 @@ PY
 
 ### คำสั่งควบคุม (ทาง A — หลังติดตั้งเปิดอัตโนมัติ)
 
-- `/f2o:off` — **soft-off**: hook หยุดบังคับทันที, การฉีดกฎ Layer 0 หยุดตั้งแต่ session ถัดไป — แต่สกิลทั้ง 13 และ shorthand ยังเรียกใช้ได้ตามปกติ
+- `/f2o:off` — **soft-off**: hook หยุดบังคับทันที, การฉีดกฎ Layer 0 หยุดตั้งแต่ session ถัดไป — แต่สกิลทั้ง 14 และ shorthand ยังเรียกใช้ได้ตามปกติ
 - `/f2o:on` — เปิดกลับ · `/f2o:status` — ดูสถานะปัจจุบัน
 - **hard-off** (ถอดทุกอย่างชั่วคราว): `claude plugin disable f2o@f2o` (มีผล session ถัดไป)
 
 ### Shorthand เรียกสกิลเจาะจง
 
-พิมพ์ `/f2o:` แล้วตามด้วยตัวย่อ เช่น `/f2o:vbc` = บังคับโหลด verifying-before-claiming เป็น primary ของงานนั้นทันที (สกิลอื่นยังโหลดอัตโนมัติตามสถานการณ์เหมือนเดิม — ไม่ใช่โหมด exclusive) · ครบทั้ง 13: vbc ftt sfc ptd scc rcb rvc dpw mwm ofr pdv efi ivc · ชื่อเต็ม `/f2o:verifying-before-claiming` ก็ยังใช้ได้เสมอ
+พิมพ์ `/f2o:` แล้วตามด้วยตัวย่อ เช่น `/f2o:vbc` = บังคับโหลด verifying-before-claiming เป็น primary ของงานนั้นทันที (สกิลอื่นยังโหลดอัตโนมัติตามสถานการณ์เหมือนเดิม — ไม่ใช่โหมด exclusive) · ครบทั้ง 14: vbc ftt sfc ptd scc rcb rvc dpw caf mwm ofr pdv efi ivc · ชื่อเต็ม `/f2o:verifying-before-claiming` ก็ยังใช้ได้เสมอ
 
 ## 2.5 ติดตั้งมือจาก clone (ทางเลือก, ~2 นาที)
 
@@ -107,7 +107,7 @@ PY
 ```sh
 git clone https://github.com/Work-in-Problem/F2O.git && SRC="$PWD/F2O"
 
-# ขั้น 1 — ติดตั้ง skills 13 ตัวแบบ global (ใช้ได้ทุกโปรเจกต์บนเครื่องนี้)
+# ขั้น 1 — ติดตั้ง skills 14 ตัวแบบ global (ใช้ได้ทุกโปรเจกต์บนเครื่องนี้)
 mkdir -p ~/.claude/skills
 cp -R "$SRC/skills/." ~/.claude/skills/
 

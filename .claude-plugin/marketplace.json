@@ -7,7 +7,7 @@
     {
       "name": "f2o",
       "source": "./",
-      "description": "Fable2Opus: 13 process skills + Layer-0 core rules (auto-injected) + claim-gate Stop hook. Makes Opus 4.8 work at its own ceiling, reliably."
+      "description": "Fable2Opus: 14 process skills + Layer-0 core rules (auto-injected) + claim-gate Stop hook. Makes Opus 4.8 work at its own ceiling, reliably."
     }
   ]
 }
