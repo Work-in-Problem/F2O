@@ -1,7 +1,6 @@
 # คู่มือการใช้งาน Fable2Opus
 
 > สอน Claude Opus 4.8 ให้ทำงานด้วย "กระบวนการ" แบบ Fable 5 — ติดตั้งครั้งเดียว ใช้ได้ทุกโปรเจกต์
-> ฉบับ PDF สวยงาม: [docs/Fable2Opus-User-Guide-TH.pdf](docs/Fable2Opus-User-Guide-TH.pdf)
 
 ## โปรเจกต์นี้คืออะไร
 

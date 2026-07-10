@@ -40,7 +40,7 @@ hard-off: `claude plugin disable f2o@f2o`
 `/f2o:ivc` inventorying-capabilities
 (สาย manual/npx: `cp -R "$SRC/aliases/." ~/.claude/skills/` → ได้ `/vbc` แบบไม่มี prefix)
 
-**คู่มือเต็ม:** [USAGE.md](USAGE.md) · ฉบับ PDF: [docs/Fable2Opus-User-Guide-TH.pdf](docs/Fable2Opus-User-Guide-TH.pdf)
+**คู่มือเต็ม:** [USAGE.md](USAGE.md)
 
 ## What's inside / ส่วนประกอบ
 
