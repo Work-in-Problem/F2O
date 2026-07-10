@@ -5,6 +5,18 @@
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-07-10 · "The Validation Release"
+### Added
+- **ผลการทดลองยืนยันประสิทธิผล (pre-registered):** พฤติกรรม "เห็นปัญหาข้างเคียง → รายงานโดยไม่แตะ" — Opus เปล่าแท้ **0/10** vs F2O **10/10**, Fisher's exact one-tailed **p≈5.4×10⁻⁶** พร้อม dose-response 4 ระดับ (0/10 → 1/5 → 9/10 → 10/10) · ผลรอง: F2O เปลี่ยนวิธีวินิจฉัย flaky bug (amplification 0/5 → 5/5) · เอกสารเต็ม: `evals/results/` (PREREG commit ก่อนรันทุกรอบ ตรวจย้อนได้ใน git)
+- **Fixtures ยาก 3 ชุด + tasks 20–22** สำหรับใครก็ตามที่อยากทำซ้ำ/หักล้าง: `flaky-race-hard` (race ~2% ที่บังคับวินัยสถิติ), `conflicting-reqs` (requirement ขัดแย้งจริงแบบพิสูจน์ได้), `plant-wart-v2` (กับดัก scope สุดยั่ว)
+- **เว็บ:** แถบผลการทดลองบน hero + Nerd Zone ยกเครื่องเป็นรายงานวิชาการฉบับเผยแพร่ (Abstract → Method → Results → Threats to Validity → Reproduce) + typography ไทย/อังกฤษเก็บละเอียด
+### Changed
+- ปลดป้าย exploratory ของ claim 1/5→5/5 → แทนด้วยผลยืนยัน 0/10→10/10 ทุกจุดที่อ้างถึง
+- คู่มือ PDF ถอนออกจากจุด user-facing (เว็บ 2 ภาษาแทนที่โดยสมบูรณ์)
+### หมายเหตุสำหรับผู้ใช้
+- **ไม่มีการเปลี่ยน skills / hooks / commands ใดๆ** — พฤติกรรม plugin เหมือน 1.2.0 ทุกประการ อัพเดตได้อย่างปลอดภัย
+
+
 ## [1.2.0] — 2026-07-10
 ### Added
 - `/f2o:update` — เช็คเวอร์ชันใหม่จาก GitHub แบบผู้ใช้สั่งเอง (on-demand, ไม่มี phone-home อัตโนมัติ) พร้อมบอกคำสั่งอัพเดต/ย้อนเวอร์ชัน
