@@ -82,7 +82,7 @@ claude plugin install f2o@f2o</pre>
       <span class="badge">C</span>
       <div>
         <b><span class="lang-th">ติดตั้งมือจาก clone</span><span class="lang-en">Manual, from a clone</span></b>
-        <div class="dim small"><span class="lang-th">~2 นาที ควบคุมเองทุกชิ้น</span><span class="lang-en">~2 minutes, full control</span></div>
+        <div class="dim small"><span class="lang-th">ตัวเลือกบางเครื่องมือ</span><span class="lang-en">the power-user option</span></div>
       </div>
     </div>
     <p class="small"><span class="lang-th">1) Skills แบบ global (ครั้งเดียว ใช้ทุกโปรเจกต์) + shorthand เปล่า <code>/vbc</code>:</span><span class="lang-en">1) Skills, globally (once per machine) + bare <code>/vbc</code> shorthands:</span></p>
@@ -187,7 +187,7 @@ JSON</pre>
     <p><span class="lang-th">เป็นการบังคับโหลดสกิลนั้นเป็น primary ของงานปัจจุบันทันที — อีก 12 ตัว<b>ไม่ได้ถูกปิด</b> ยังโหลดอัตโนมัติตามสถานการณ์ได้เหมือนเดิม (ไม่ใช่โหมด exclusive)</span><span class="lang-en">It force-loads that skill as the primary for the current task — the other 12 are <b>not</b> disabled and still auto-load by situation (not an exclusive mode).</span></p>
   </details>
   <details class="faq"><summary><span class="lang-th">ปิด F2O แล้วยังเรียกใช้รายสกิลได้ไหม?</span><span class="lang-en">Can I still use individual skills while F2O is "off"?</span></summary>
-    <p><span class="lang-th">ได้ ถ้าปิดแบบนุ่ม <code>/f2o:off</code> — hook หยุดบังคับและกฎแกนหยุดฉีดตั้งแต่ session ถัดไป แต่สกิลกับ shorthand ยังเรียกได้ปกติ · ส่วนปิดแบบแข็ง <code>claude plugin disable f2o@f2o</code> จะถอดทุกอย่างออกทั้งชุด</span><span class="lang-en">Yes with the soft-off <code>/f2o:off</code> — hooks go silent and core-rule injection stops next session, but skills and shorthands remain invocable. The hard-off <code>claude plugin disable f2o@f2o</code> removes everything.</span></p>
+    <p><span class="lang-th">ได้ ถ้าปิดแบบ soft <code>/f2o:off</code> — hook หยุดบังคับและกฎแกนหยุดฉีดตั้งแต่ session ถัดไป แต่สกิลกับ shorthand ยังเรียกได้ปกติ · ส่วนปิดแบบ hard <code>claude plugin disable f2o@f2o</code> จะถอดทุกอย่างออกทั้งชุด</span><span class="lang-en">Yes with the soft-off <code>/f2o:off</code> — hooks go silent and core-rule injection stops next session, but skills and shorthands remain invocable. The hard-off <code>claude plugin disable f2o@f2o</code> removes everything.</span></p>
   </details>
   <details class="faq"><summary><span class="lang-th">เปลือง token ขึ้นไหม?</span><span class="lang-en">Does it burn more tokens?</span></summary>
     <p><span class="lang-th">ตรงๆ คือ ใช่ ในงานที่ verify หนัก — ราว 1.3–2 เท่า แลกกับหลักฐานจริงแทนคำพูดลอยๆ · งานเล็กแทบไม่ต่างเพราะมีกฎ proportionality (งานจิ๋วห้ามทำพิธีใหญ่) และทุกกฎมีช่องยกเว้นพร้อมเหตุผล 1 บรรทัด</span><span class="lang-en">Honestly: yes, on verification-heavy work — roughly 1.3–2× in exchange for receipts instead of vibes. Small tasks barely change: a proportionality rule forbids big ceremony on tiny diffs, and every rule has a stated-justification escape hatch.</span></p>

@@ -18,10 +18,12 @@
   --hz-text: #8a6400;
 }
 
+:root { --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Noto Sans Thai", "Sukhumvit Set", "Thonburi", sans-serif; }
+
 html { scroll-behavior: smooth; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Noto Sans Thai", "Sukhumvit Set", "Thonburi", sans-serif;
+  font-family: var(--sans);
   background: var(--bg); color: var(--ink);
   line-height: 1.75; font-size: 16px;
   transition: background .2s, color .2s;
@@ -178,3 +180,13 @@ footer { border-top: 1px solid var(--line); margin-top: 34px; }
   .copy-btn { top: 7px; right: 7px; }
   .brand-sub { display: none; }
 }
+
+/* Thai text inside mono/letterspaced labels: mono fonts carry no Thai glyphs,
+   so per-glyph fallback + wide tracking breaks the script — give Thai spans the
+   proper sans stack and sane spacing (Latin keeps the industrial mono look). */
+.nerd-k .lang-th, th .lang-th, .kicker .lang-th, .tile-k .lang-th, .foot .lang-th,
+.nerd-head .lang-th, .brand-sub .lang-th {
+  font-family: var(--sans); letter-spacing: .4px; font-weight: 700;
+}
+th .lang-th { font-weight: 600; }
+.foot .lang-th { font-weight: 400; }
