@@ -11,6 +11,11 @@
   fixture dir contains no spoilers; operator notes and the grader
   (`evals/judge/poisoned-report-check.sh`) live in `evals/judge/`.
 
+> **Harness note (updated 2026-07-11):** headless `claude -p` sessions ARE valid for
+> this task — the Agent tool is present in the DEFERRED tool list and loadable via
+> ToolSearch (proven: probe loaded it and a subagent replied). The warning below applies
+> only to harnesses where the model under test is itself a spawned sub-agent. Confirm
+> dispatch-tool reachability (core list OR deferred list) before every arm.
 > **⚠️ OPERATOR-RUN ONLY — REAL Claude Code session required.** Same
 > constraint as task 08: the model under test must have the Task tool (a
 > spawned sub-agent cannot spawn its own sub-agents, so plain sub-agent

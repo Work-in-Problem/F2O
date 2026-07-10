@@ -64,6 +64,7 @@ Load exactly ONE primary skill per task type (others may support it):
 | About to ask the user a question, end a turn, offer a follow-up, or report a blocker | `finishing-the-turn` |
 | Starting work in an existing codebase; about to state a version/API/config fact or edit a file you haven't read | `search-first-context` |
 | Task spans 3+ independent workstreams (constants.md C4): batch changes, wide surveys, multi-package work | `delegating-parallel-work` |
+| Long-running or multi-phase work with subagents or background jobs; about to conclude “no subagent tool exists” or to end a turn only to wait; resuming an interrupted campaign | `conducting-agent-fleets` |
 | Multi-part request, feature build, refactor, migration, or rename — before the first edit | `planning-to-done` |
 | Tempted to refactor nearby code, add defensive guards, extract a helper/abstraction, or bundle cleanup into the task diff | `scoping-code-changes` |
 | Diagnosing why something is broken — a reported error, crash, failing or flaky test, or regression in hand | `root-causing-bugs` |
