@@ -75,6 +75,9 @@ evals/
 
 กติกา:
 
+0. **(อัพเดต 2026-07-10 หลัง A/B รอบ 2)** ถ้าเครื่องติดตั้ง plugin f2o ไว้ — arm "bare" แท้ต้อง
+   `claude plugin disable f2o@f2o` ก่อน (SessionStart จะฉีด Layer-0 เข้าทุก session และ skills โหลดเองได้
+   → กลุ่มควบคุมโดนรักษาไปเอง ดูบทเรียนใน `results/2026-07-10-ab-run2.md`) แล้ว enable กลับหลังจบ
 1. ทุก run (ทั้ง A และ B) ให้ copy fixture ไปยัง **temp dir สดนอก repo**
    (เช่นใต้ `$TMPDIR` หรือ `~/eval-runs/`) — ห้ามใช้ dir เดิมซ้ำข้าม run
 2. **ไฟล์เฉลยและ grader ทั้งหมดอยู่ที่ `evals/judge/` (นอกโฟลเดอร์ fixture)** ดังนั้น
