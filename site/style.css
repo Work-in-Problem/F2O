@@ -202,6 +202,8 @@ th .lang-th { font-weight: 600; }
 .paper-ul li { font-size: .88em; color: var(--dim); padding-left: 16px; position: relative; margin: 7px 0; }
 .paper-ul li::before { content: "▸"; position: absolute; left: 0; color: var(--hz-dim); }
 .paper-ul li b, .paper-ul li code { color: var(--ink); }
+.paper a { color: var(--hz-text); text-decoration: none; font-family: ui-monospace, Menlo, monospace; }
+.paper a:hover { text-decoration: underline; }
 .paper-tbl { min-width: 560px; font-size: .84em; }
 .paper .tbl-scroll { margin: 6px 0 10px; }
 
