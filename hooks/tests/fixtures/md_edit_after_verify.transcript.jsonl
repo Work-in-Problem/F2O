@@ -1,0 +1,4 @@
+{"type": "user", "isSidechain": false, "uuid": "u1", "message": {"role": "user", "content": "Fix the login bug"}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Bash", "input": {"command": "npm test", "description": "Run tests"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t2", "name": "Edit", "input": {"file_path": "/repo/PLAN.md", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-text", "message": {"role": "assistant", "content": [{"type": "text", "text": "All done — tests pass; PLAN.md status updated."}]}}

@@ -1,0 +1,2 @@
+{"type": "user", "isSidechain": false, "uuid": "u1", "message": {"role": "user", "content": "Fix the parser"}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-text", "message": {"role": "assistant", "content": [{"type": "thinking", "thinking": "..."}, {"type": "text", "text": "I fixed the parser. I'll now run the tests."}]}}

@@ -1,0 +1,9 @@
+{
+  "session_id": "fixture-session",
+  "transcript_path": "__TRANSCRIPT__",
+  "cwd": "/tmp",
+  "hook_event_name": "Stop",
+  "stop_hook_active": false,
+  "permission_mode": "default",
+  "last_assistant_message": "Now I need to confirm nothing else broke.\nConfirmed: `grep -rn old_name src/` returns zero hits and the suite is green (84 passed, 0 failed)."
+}

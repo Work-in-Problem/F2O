@@ -1,0 +1,4 @@
+{"type": "user", "isSidechain": false, "uuid": "u1", "message": {"role": "user", "content": "Rewrite the docs guide"}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Bash", "input": {"command": "git status", "description": "Check working tree"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Edit", "input": {"file_path": "/repo/docs/guide.md", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-text", "message": {"role": "assistant", "content": [{"type": "thinking", "thinking": "..."}, {"type": "text", "text": "Docs rewrite complete."}]}}

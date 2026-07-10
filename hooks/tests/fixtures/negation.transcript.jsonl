@@ -1,0 +1,4 @@
+{"type": "user", "isSidechain": false, "uuid": "u1", "message": {"role": "user", "content": "Refactor the core module"}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Bash", "input": {"command": "pytest -q", "description": "Run tests"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Edit", "input": {"file_path": "/repo/src/core.py", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-text", "message": {"role": "assistant", "content": [{"type": "thinking", "thinking": "..."}, {"type": "text", "text": "The refactor is not done yet and the flaky test is not fixed. I have paused before touching CI config; the parked question is below with options and a recommended default."}]}}

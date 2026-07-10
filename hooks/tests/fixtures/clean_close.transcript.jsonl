@@ -1,0 +1,5 @@
+{"type": "user", "isSidechain": false, "uuid": "u1", "message": {"role": "user", "content": "Fix the failing parser test"}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Read", "input": {"file_path": "/repo/src/app.py"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Edit", "input": {"file_path": "/repo/src/app.py", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Bash", "input": {"command": "pytest -q", "description": "Run test suite"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-text", "message": {"role": "assistant", "content": [{"type": "thinking", "thinking": "..."}, {"type": "text", "text": "Done — 12 passed, 0 failed. VERIFIED: `pytest -q` → 12 passed, 0 failed."}]}}

@@ -1,0 +1,6 @@
+{
+    "source_dir": "./outbox",
+    "max_retries": 4,
+    "backoff_seconds": 0.5,
+    "verify_checksums": true
+}

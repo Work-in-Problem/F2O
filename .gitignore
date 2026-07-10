@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Internal R&D — stays local, not part of the distribution
+research/
+
+# Eval answer keys / operator-only grading assets — publishing them beside the
+# task bank would let evaluated runs read their own answers
+evals/judge/
+
+# Per-session working notes (Layer-0 convention)
+WORKING_NOTES.md
+
+# Local-only Claude Code state
+.claude/settings.local.json

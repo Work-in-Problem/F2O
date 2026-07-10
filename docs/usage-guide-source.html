@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>คู่มือการใช้งาน Fable2Opus</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a2033; --sub: #5a6178; --line: #e3e6ef;
+    --accent: #3b47c4; --accent-soft: #eef0fc; --accent-line: #c9cef2;
+    --ok: #0e7a4d; --warn: #a35a00; --card: #f7f8fb; --code-bg: #232840;
+  }
+  body { font-family: "Sukhumvit Set", "Thonburi", -apple-system, sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.72; }
+  .page-break { break-before: page; }
+  .avoid-break { break-inside: avoid; }
+
+  /* ---------- cover header ---------- */
+  .cover { background: linear-gradient(135deg, #2a2f8f 0%, #3b47c4 55%, #5561e0 100%); color: #fff; border-radius: 14px; padding: 26px 30px 24px; margin-bottom: 18px; }
+  .cover .kicker { font-size: 9pt; letter-spacing: 2.5px; text-transform: uppercase; opacity: .85; margin-bottom: 6px; }
+  .cover h1 { font-size: 23pt; line-height: 1.3; font-weight: 700; }
+  .cover .tagline { font-size: 11pt; opacity: .92; margin-top: 6px; }
+  .cover .meta { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.28); font-size: 8.5pt; opacity: .8; display: flex; gap: 22px; }
+
+  /* ---------- headings ---------- */
+  h2 { font-size: 14pt; color: var(--accent); margin: 20px 0 8px; break-after: avoid; display: flex; align-items: center; gap: 9px; }
+  h2 .num { background: var(--accent); color: #fff; border-radius: 7px; width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; font-size: 11pt; flex: 0 0 auto; }
+  h3 { font-size: 11pt; margin: 12px 0 4px; break-after: avoid; }
+  p { margin: 4px 0; }
+  .lead { color: var(--sub); }
+
+  /* ---------- tables ---------- */
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9.5pt; }
+  th { background: var(--accent-soft); color: var(--accent); text-align: left; padding: 6px 9px; border: 1px solid var(--accent-line); font-size: 9pt; }
+  td { padding: 6px 9px; border: 1px solid var(--line); vertical-align: top; }
+  tr { break-inside: avoid; }
+  td.c { text-align: center; }
+  .skill-name { font-family: Menlo, monospace; font-size: 8.2pt; color: var(--accent); font-weight: 600; white-space: nowrap; }
+
+  /* ---------- cards & steps ---------- */
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 15px; margin: 8px 0; break-inside: avoid; }
+  .step { border-left: 4px solid var(--accent); }
+  .step .step-title { font-weight: 700; margin-bottom: 3px; }
+  .step .step-title .badge { background: var(--accent); color: #fff; border-radius: 5px; padding: 1px 8px; font-size: 8.5pt; margin-right: 7px; }
+  .optional .badge { background: #8a91a8; }
+  .note { background: #fff8ec; border: 1px solid #f0dcb4; border-radius: 8px; padding: 8px 12px; margin: 8px 0; font-size: 9.5pt; break-inside: avoid; }
+  .note b:first-child { color: var(--warn); }
+
+  /* ---------- code ---------- */
+  pre { background: var(--code-bg); color: #e8ebff; border-radius: 8px; padding: 10px 13px; font-family: Menlo, monospace; font-size: 8.3pt; line-height: 1.6; overflow: hidden; margin: 6px 0; break-inside: avoid; white-space: pre-wrap; }
+  pre .cm { color: #8f97c4; }
+  code { font-family: Menlo, monospace; font-size: 8.6pt; background: var(--accent-soft); border-radius: 4px; padding: 0 4px; color: var(--accent); }
+  pre code { background: none; padding: 0; color: inherit; }
+
+  /* ---------- checklist ---------- */
+  ul.check { list-style: none; margin: 4px 0; }
+  ul.check li { padding-left: 24px; position: relative; margin: 3px 0; }
+  ul.check li::before { content: "✓"; position: absolute; left: 2px; color: var(--ok); font-weight: 700; }
+  ul.plain { margin: 4px 0 4px 20px; }
+  ul.plain li { margin: 3px 0; }
+
+  .two-col { display: flex; gap: 12px; }
+  .two-col > div { flex: 1; }
+  .footer { margin-top: 16px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--sub); font-size: 8.5pt; }
+  .good { color: var(--ok); font-weight: 600; }
+  .bad { color: #b3261e; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- ================= COVER + WHAT IS THIS ================= -->
+<div class="cover">
+  <div class="kicker">FABLE2OPUS — USER GUIDE</div>
+  <h1>คู่มือการใช้งาน Fable2Opus</h1>
+  <div class="tagline">สอน Claude Opus 4.8 ให้ทำงานด้วย "กระบวนการ" ระดับ Fable 5 — ติดตั้งครั้งเดียว ใช้ได้ทุกโปรเจกต์</div>
+  <div class="meta"><span>เวอร์ชัน 1.2 · กรกฎาคม 2026</span><span>ติดตั้งด้วยคำสั่งเดียว</span><span>ไม่ต้องมีพื้นฐานลึก</span></div>
+</div>
+
+<h2><span class="num">1</span>โปรเจกต์นี้คืออะไร</h2>
+<p><b>Fable2Opus (F2O)</b> คือชุด "ถ่ายทอดกระบวนการทำงาน" — เกิดจากการวิเคราะห์ว่า Claude Fable 5 (รุ่นท็อป)
+ทำงานต่างจาก Claude Opus 4.8 ตรงไหน แล้วกลั่นความต่างส่วนที่เป็น<b>วินัยและขั้นตอน</b> (ไม่ใช่ความฉลาดดิบ)
+ออกมาเป็นกติกา+คู่มือที่ Opus 4.8 ทำตามได้จริง ผลคือได้ Opus ที่ทำงานรอบคอบระดับใกล้เคียงรุ่นท็อป
+ในราคาถูกกว่าครึ่งหนึ่งและ limit การใช้งานที่เยอะกว่า</p>
+<h3 style="margin-top:8px">ทำอะไรได้บ้าง</h3>
+<div class="two-col">
+  <ul class="check" style="flex:1">
+    <li><b>งานโค้ดทุกชนิด</b> — แก้บั๊ก สร้าง feature, refactor, migration แบบมีหลักฐานทุกขั้น</li>
+    <li><b>ล่าบั๊กยาก</b> — บั๊กเป็นๆ หายๆ, race condition ด้วยวิธีเชิงสถิติ ไม่ใช่เดา</li>
+    <li><b>Code review</b> — หาให้ครบก่อนกรอง ไม่ปล่อยบั๊กหลุดเพราะถูกสั่งให้ "เอาแต่เรื่องใหญ่"</li>
+    <li><b>งานยาวข้ามวัน/ข้ามsession</b> — จดโน้ตกันงานหล่นเมื่อ context เต็ม</li>
+  </ul>
+  <ul class="check" style="flex:1">
+    <li><b>งานเอกสาร</b> — รายงาน spreadsheet slide ที่ตัวเลขตรวจทานแล้วทุกตัว</li>
+    <li><b>อ่านค่าจากภาพ/สแกน</b> — ตาราง ตัวเลข แบบทวนสอบ ไม่เดาจุดที่มองไม่ชัด</li>
+    <li><b>งานใหญ่แบบขนาน</b> — แตกงานให้ sub-agent หลายตัวช่วยแล้วตรวจรวม</li>
+    <li><b>กันหลอกว่าเสร็จ</b> — hook บล็อกคำว่า "done" ที่ไม่มีหลักฐานจริง</li>
+  </ul>
+</div>
+
+<h2><span class="num">2</span>ใช้ F2O กับไม่ใช้ ต่างกันอย่างไร</h2>
+<table>
+  <tr><th style="width:21%">สถานการณ์</th><th style="width:39%">Opus 4.8 เพียวๆ <span style="font-weight:400">(พฤติกรรมตั้งต้นที่ Anthropic บันทึกไว้)</span></th><th>Opus 4.8 + F2O</th></tr>
+  <tr><td>บั๊กเป็นๆ หายๆ</td><td><span class="bad">✗</span> เทสต์ผ่าน 1 รอบก็ประกาศ "fixed"</td><td><span class="good">✓</span> บังคับรันซ้ำ 10–30 รอบ รายงานตัวเลขก่อน/หลังแก้</td></tr>
+  <tr><td>คำว่า "เสร็จแล้ว"</td><td><span class="bad">✗</span> ต้องเชื่อคำพูด ไม่รู้ตรวจจริงไหม</td><td><span class="good">✓</span> ทุก claim ชี้หลักฐานได้ · แยก VERIFIED / NOT VERIFIED ชัด · hook บล็อกถ้าโกหก</td></tr>
+  <tr><td>คำถามระหว่างงาน</td><td><span class="bad">✗</span> ถามเรื่องเล็กบ่อย จบเทิร์นด้วย "เอาไหมครับ?"</td><td><span class="good">✓</span> เรื่องย้อนกลับได้ตัดสินใจเอง+จดไว้ให้ veto ทีหลัง — งานจบในเทิร์นเดียวบ่อยขึ้น</td></tr>
+  <tr><td>ข้อเท็จจริง เวอร์ชัน/API/ราคา</td><td><span class="bad">✗</span> ตอบจากความจำ (อาจล้าสมัย)</td><td><span class="good">✓</span> ค้นเว็บ/อ่านไฟล์จริงก่อนพูดเสมอ</td></tr>
+  <tr><td>ขอบเขตการแก้โค้ด</td><td><span class="bad">✗</span> ชอบ refactor แถม diff บวม</td><td><span class="good">✓</span> diff ตรงโจทย์ ปัญหาข้างเคียงถูก "จดรายงาน" แทนแก้มั่ว</td></tr>
+  <tr><td>Review ที่สั่งว่า "เอาเฉพาะเรื่องใหญ่"</td><td><span class="bad">✗</span> ทำตามตรงตัวจนตกหล่นบั๊ก (recall ร่วง — Anthropic วัดเอง)</td><td><span class="good">✓</span> หาให้หมดก่อน แล้วค่อยกรองตอนรายงาน</td></tr>
+  <tr><td>งานหลาย requirement</td><td><span class="bad">✗</span> ข้อท้ายๆ ชอบหล่นหาย</td><td><span class="good">✓</span> checklist ครบทุกข้อ ปิดงานเทียบหลักฐานรายข้อ (n/n)</td></tr>
+  <tr><td>งานยาว / ทำต่อวันหลัง</td><td><span class="bad">✗</span> ลืมบริบท ทำซ้ำหรือหล่นหลัง context เต็ม</td><td><span class="good">✓</span> โน้ต WORKING_NOTES.md + พิธีฟื้นบริบทจากหลักฐานจริง</td></tr>
+</table>
+<div class="note" style="font-size:8.8pt"><b>เพื่อความตรงไปตรงมา:</b> คอลัมน์ซ้ายคือพฤติกรรมตั้งต้นของ Opus 4.8 ตามเอกสาร migration ของ Anthropic เอง ส่วนขวาคือกลไกที่ F2O บังคับ · หลักฐานเชิงตัวเลขที่มีแล้ว: instruction แบบเดียวกันนี้ลดการถามพร่ำเพรื่อ ~12 จุด (Anthropic วัด) และการทดสอบ A/B ของโปรเจกต์พบการรายงานปัญหาข้างเคียงเพิ่มจาก 1/5 → 5/5 เมื่อโหลด skill · สิ่งที่ F2O ให้ไม่ได้: ความฉลาดดิบ — ช่องว่างด้าน insight ยังเป็นของรุ่นท็อป</div>
+
+<h2><span class="num">3</span>ส่วนประกอบ 3 ชั้น</h2>
+<table>
+  <tr><th style="width:14%">ชั้น</th><th>คืออะไร</th><th style="width:16%">จำเป็นไหม</th></tr>
+  <tr><td><b>Layer 0</b></td><td>กฎแกน 2 ไฟล์ (<code>CLAUDE.md</code> + <code>constants.md</code>) — ห้ามบอกว่า "เสร็จ" โดยไม่มีหลักฐาน · ไม่ถามเรื่องเล็กน้อย · จดโน้ตไฟล์เดียว</td><td class="c"><span class="good">จำเป็น</span></td></tr>
+  <tr><td><b>Layer 1</b></td><td>Skills 13 ตัว — คู่มือเชิงลึกที่ Claude <b>โหลดเองอัตโนมัติ</b>ตามสถานการณ์ (แก้บั๊ก → ตัว debug ทำงาน, จะสรุปงาน → ตัวรายงานทำงาน)</td><td class="c"><span class="good">จำเป็น</span></td></tr>
+  <tr><td><b>Layer 2</b></td><td>Hook ตรวจจับ — สคริปต์ที่<b>บล็อก</b>ข้อความ "เสร็จแล้ว" ที่ไม่มีหลักฐานจริง ก่อนถึงมือคุณ</td><td class="c">ทางเลือก (แนะนำ)</td></tr>
+</table>
+<div class="two-col">
+  <div class="card"><b class="good">สิ่งที่จะเปลี่ยน</b><ul class="check">
+    <li>ค้น/อ่านโค้ดก่อนแก้ ไม่เดาจากความจำ</li>
+    <li>รันเทสต์ซ้ำก่อนพูดว่า "fixed" (บั๊กแบบเป็นๆ หายๆ รันซ้ำ 10–20 รอบ)</li>
+    <li>ทำงานจนจบเทิร์น ไม่ถาม "เอาไหมครับ?" กลางทาง</li>
+    <li>สรุปงานแบบ VERIFIED / NOT VERIFIED / ASSUMED</li>
+  </ul></div>
+  <div class="card"><b class="bad">สิ่งที่ไม่เปลี่ยน</b>
+    <p>ความฉลาดดิบของโมเดล — ชุดนี้ถ่ายทอด<b>วินัยการทำงาน</b> ไม่ใช่สมองเสริม
+    งานที่ต้องใช้ insight ลึกยังเป็นขีดจำกัดของตัวโมเดลเช่นเดิม</p>
+  </div>
+</div>
+
+<h2><span class="num">4</span>สิ่งที่ต้องมีก่อน</h2>
+<ul class="check">
+  <li><b>Claude Code</b> (แอป desktop หรือ CLI) ที่ล็อกอินใช้งานได้แล้ว</li>
+  <li><b>โมเดล Opus 4.8</b> — ใน session พิมพ์ <code>/model</code> แล้วเลือก Opus (ชุดนี้ออกแบบเพื่อ Opus 4.8 แต่ใช้กับโมเดลอื่นก็ไม่พัง)</li>
+  <li><b>Python 3</b> — เฉพาะถ้าติดตั้ง Layer 2 (macOS มีอยู่แล้ว — เช็ค: <code>python3 --version</code>)</li>
+</ul>
+<div class="note"><b>แหล่งข้อมูล:</b> GitHub <code>github.com/Work-in-Problem/F2O</code> (open source, MIT) ·
+เว็บไซต์ <code>f2o.workinproblem.com</code> — ติดตั้งด้วยคำสั่งเดียวได้ 2 ช่องทาง (ดูหัวข้อ 5) หรือ clone มาติดตั้งมือ</div>
+
+<!-- ================= INSTALL ================= -->
+<h2><span class="num">5</span>ติดตั้ง</h2>
+<div class="card step avoid-break">
+  <div class="step-title"><span class="badge">ทาง A · แนะนำ</span>Claude Code plugin — ครบทุกชั้น: skills + กฎแกนฉีดอัตโนมัติ + hook</div>
+<pre>claude plugin marketplace add Work-in-Problem/F2O
+claude plugin install fable2opus@f2o</pre>
+  <p style="margin:4px 0 0">หรือพิมพ์ <code>/plugin</code> ในแอปแล้วเลือก marketplace <code>Work-in-Problem/F2O</code> — เปิดใช้แล้วกฎ Layer 0 ถูกฉีดเข้า<b>ทุก</b> session อัตโนมัติ · ปิดชั่วคราว: disable plugin หรือ <code>FABLE2OPUS_HOOKS_OFF=1</code></p>
+</div>
+<div class="card step avoid-break">
+  <div class="step-title"><span class="badge">ทาง B</span>npx skills — ได้เฉพาะ skills 13 ตัว</div>
+<pre>npx skills add Work-in-Problem/F2O --all -y -g</pre>
+  <p style="margin:4px 0 0">ช่องทางนี้<b>ไม่พก</b>กฎแกน (Layer 0) กับ hook — copy เพิ่มเองตามทาง C ขั้น 2–3</p>
+</div>
+<h3 style="margin-top:14px">ทาง C — ติดตั้งมือจาก clone (~2 นาที)</h3>
+<p class="lead">เปิดแอป <b>Terminal</b> แล้ว copy คำสั่งไปวางทีละกล่อง</p>
+
+<div class="card step avoid-break">
+  <div class="step-title"><span class="badge">ขั้น 1</span>ติดตั้ง Skills 13 ตัว แบบ global — ทำครั้งเดียว ใช้ได้ทุกโปรเจกต์</div>
+<pre>git clone https://github.com/Work-in-Problem/F2O.git && SRC="$PWD/F2O"
+
+mkdir -p ~/.claude/skills
+cp -R "$SRC/skills/." ~/.claude/skills/
+
+<span class="cm"># ตรวจว่าเข้าครบ — ต้องเห็น 13 โฟลเดอร์</span>
+ls ~/.claude/skills</pre>
+</div>
+
+<div class="card step avoid-break">
+  <div class="step-title"><span class="badge">ขั้น 2</span>ติดตั้ง Layer 0 ลง "โปรเจกต์ที่จะใช้งาน" — ทำซ้ำกับทุกโปรเจกต์ที่ต้องการ</div>
+<pre>cd /path/to/your-project        <span class="cm"># ← แก้เป็นโปรเจกต์จริงของคุณ</span>
+
+cp "$SRC/core/constants.md" ./constants.md
+
+<span class="cm"># ถ้าโปรเจกต์ยังไม่มีไฟล์ CLAUDE.md:</span>
+cp "$SRC/core/CLAUDE-core.md" ./CLAUDE.md
+
+<span class="cm"># ถ้ามี CLAUDE.md อยู่แล้ว ให้ต่อท้ายแทน:</span>
+cat "$SRC/core/CLAUDE-core.md" >> ./CLAUDE.md</pre>
+</div>
+
+<div class="card step optional avoid-break">
+  <div class="step-title"><span class="badge">ขั้น 3 · ทางเลือก</span>ติดตั้ง Hook กันหลอกว่าเสร็จ (Layer 2)</div>
+<pre>mkdir -p .claude/hooks
+cp "$SRC/hooks/claim_gate.py" .claude/hooks/
+cat &gt; .claude/settings.json &lt;&lt;'JSON'
+{"hooks":{"Stop":[{"hooks":[{"type":"command","command":"python3",
+  "args":["${CLAUDE_PROJECT_DIR}/.claude/hooks/claim_gate.py"],"timeout":30}]}]}}
+JSON</pre>
+  <div class="note" style="margin-bottom:0"><b>ระวัง:</b> ถ้าโปรเจกต์มี <code>.claude/settings.json</code> อยู่แล้ว <b>อย่า copy ทับ</b> — เปิดไฟล์แล้วเพิ่มเฉพาะก้อน <code>"hooks"</code> จากไฟล์ต้นทางเข้าไปแทน</div>
+</div>
+
+<h2><span class="num">6</span>เรียกใช้ยังไง</h2>
+<div class="card" style="border-left:4px solid var(--ok)"><b>คำตอบสั้น: ไม่ต้องเรียก — มันทำงานเอง</b>
+<ol style="margin:6px 0 2px 20px">
+  <li><code>cd</code> เข้าโปรเจกต์ที่ติดตั้งแล้ว → เปิด <code>claude</code> → พิมพ์ <code>/model</code> เลือก <b>Opus 4.8</b></li>
+  <li>สั่งงานตามปกติ — Claude โหลด skill ที่ตรงสถานการณ์เองอัตโนมัติ</li>
+</ol></div>
+<div class="avoid-break"><table>
+  <tr><th>คุณสั่งว่า…</th><th>Skill ที่ทำงานเอง</th></tr>
+  <tr><td>"แก้บั๊ก login แล้วเทสต์ให้ผ่าน"</td><td><span class="skill-name">root-causing-bugs</span> + <span class="skill-name">verifying-before-claiming</span></td></tr>
+  <tr><td>"รีวิว PR นี้หน่อย"</td><td><span class="skill-name">reviewing-code</span></td></tr>
+  <tr><td>"ทำรายงานยอดขายจากไฟล์ csv นี้"</td><td><span class="skill-name">producing-deliverables</span></td></tr>
+</table></div>
+<p>อยากเรียกเองเจาะจงก็ได้: พิมพ์ <code>/</code> แล้วเลือกชื่อ skill หรือบอกตรงๆ ว่า <i>"ใช้ skill scoping-code-changes ด้วย"</i></p>
+<div class="note"><b>เคล็ดสำคัญกับ Opus 4.8:</b> ให้ <b>โจทย์ครบตั้งแต่ข้อความแรก</b> — Opus ทำงานยาวได้ดีที่สุดเมื่อได้ spec เต็มในเทิร์นเดียว อย่าป้อนทีละนิด แล้วปล่อยให้ทำจนจบ ไม่ต้องจ้ำจี้ระหว่างทาง</div>
+
+<!-- ================= VERIFY + TROUBLESHOOT ================= -->
+<h2><span class="num">7</span>รู้ว่าติดตั้งสำเร็จจากอะไร</h2>
+<p class="lead">เปิด session ใหม่แล้วลองสั่ง: <i>"แก้ typo ในไฟล์ X แล้วบอกด้วยว่า verify ยังไง"</i> — สัญญาณที่ควรเห็น:</p>
+<ul class="check">
+  <li>อ่านไฟล์ก่อนแก้ และ<b>ไม่ทำพิธีใหญ่โต</b>กับงานจิ๋ว (กติกา proportionality ทำงาน)</li>
+  <li>สรุปปิดงานขึ้นต้นด้วยผลลัพธ์ 1 บรรทัด + หมวด VERIFIED พร้อมคำสั่งที่รันจริง</li>
+  <li>ไม่จบเทิร์นด้วย "Want me to also…?" สำหรับสิ่งที่ควรทำต่อเอง</li>
+  <li>เช็คแบบกลไก (ทาง B/C): <code>ls ~/.claude/skills | wc -l</code> ต้องได้ <b>13</b> · ทาง A (plugin): <code>claude plugin list</code> ต้องเห็น <code>fable2opus</code> enabled</li>
+</ul>
+
+<h2><span class="num">8</span>ปัญหาพบบ่อย</h2>
+<table>
+  <tr><th style="width:38%">อาการ</th><th>ทางแก้</th></tr>
+  <tr><td>Skill ไม่โหลด / พิมพ์ <code>/</code> แล้วไม่เห็น</td><td>ปิด-เปิด session ใหม่ (skills โหลดตอนเริ่ม session) · ตรวจ <code>ls ~/.claude/skills</code></td></tr>
+  <tr><td>Hook บล็อกทั้งที่ไม่ควรบล็อก</td><td>ปิดชั่วคราว: <code>export FABLE2OPUS_HOOKS_OFF=1</code> แล้วเปิด session ใหม่</td></tr>
+  <tr><td>ทำพิธีเยอะเกินไปกับงานเล็ก</td><td>บอกตรงๆ ได้เลย ("งานนี้เล็ก ข้ามพิธี") — ทุกกฎมีช่องยกเว้นพร้อมเหตุผล 1 บรรทัดอยู่แล้ว</td></tr>
+  <tr><td>ใช้ token มากขึ้น</td><td>ปกติ — งาน verify หนักใช้ ~1.3–2 เท่า แลกกับความน่าเชื่อถือ งานเล็กแทบไม่ต่าง</td></tr>
+  <tr><td>เลขในกฎขัดกันเอง</td><td><code>constants.md</code> ชนะเสมอ (กติกา Layer 0 ข้อ 4)</td></tr>
+</table>
+
+<h2><span class="num">9</span>อัพเดต / ถอนการติดตั้ง</h2>
+<table>
+  <tr><th style="width:22%">ต้องการ</th><th>วิธีทำ</th></tr>
+  <tr><td>อัพเดต</td><td>แก้ที่โฟลเดอร์ต้นทาง แล้วรันคำสั่ง copy ขั้น 1–3 ซ้ำ (ทับของเก่า)</td></tr>
+  <tr><td>ถอน skills</td><td>ลบโฟลเดอร์ที่ไม่ต้องการออกจาก <code>~/.claude/skills/</code> (เลือกลบรายตัวได้)</td></tr>
+  <tr><td>ถอน Layer 0</td><td>ลบ <code>constants.md</code> และส่วน Fable2Opus ใน <code>CLAUDE.md</code> ของโปรเจกต์</td></tr>
+  <tr><td>ถอน hook</td><td>ลบก้อน <code>hooks</code> ใน <code>.claude/settings.json</code> + ลบโฟลเดอร์ <code>.claude/hooks/</code></td></tr>
+</table>
+
+<!-- ================= SKILLS TABLE ================= -->
+<div class="page-break"></div>
+<h2><span class="num">10</span>Skills ทั้ง 13 ตัว — ใครทำอะไร โหลดเมื่อไหร่</h2>
+<table>
+  <tr><th style="width:26%">Skill</th><th>ทำอะไร</th><th style="width:26%">โหลดเองเมื่อ</th></tr>
+  <tr><td class="skill-name">verifying-before-claiming</td><td>พิสูจน์ก่อนพูดว่าเสร็จ: ทำบั๊กให้เกิดซ้ำก่อนแก้ · รัน flow จริง · อ่าน output ไม่ใช่แค่ exit code</td><td>ทำ feature / แก้บั๊ก / จะพูดว่า done</td></tr>
+  <tr><td class="skill-name">finishing-the-turn</td><td>ไม่ถามเรื่องเล็ก · ทำงานจนจบเทิร์น · ห้ามจบด้วยคำสัญญา "เดี๋ยวจะ…"</td><td>ก่อนถามคำถาม / จบเทิร์น / เจอ error</td></tr>
+  <tr><td class="skill-name">search-first-context</td><td>ค้น/อ่านก่อนพูดหรือแก้ — เวอร์ชัน, API, ราคา ต้องเช็คก่อน ไม่เดาจากความจำ</td><td>เริ่มงานใน codebase / จะพูดข้อเท็จจริง</td></tr>
+  <tr><td class="skill-name">planning-to-done</td><td>แตกโจทย์เป็น checklist ครบทุกข้อก่อนลงมือ · ปิดงานด้วยหลักฐานรายข้อ</td><td>งานหลายส่วน / feature / migration</td></tr>
+  <tr><td class="skill-name">scoping-code-changes</td><td>diff เล็กตรงโจทย์ · ไม่ refactor แถม · เจอปัญหาข้างเคียง = จดรายงาน ไม่แก้เอง</td><td>ก่อนแก้โค้ดใดๆ</td></tr>
+  <tr><td class="skill-name">root-causing-bugs</td><td>debug แบบตั้งสมมติฐาน–ทดลอง หา root cause จริง ไม่แปะ band-aid · จัดการ flaky test แบบสถิติ</td><td>มีบั๊ก / test พัง / อาการ "เป็นบางครั้ง"</td></tr>
+  <tr><td class="skill-name">reviewing-code</td><td>รีวิวแบบ "หาให้หมดก่อน ค่อยกรอง" · ตรวจทุก finding กับโค้ดจริงก่อนรายงาน</td><td>รีวิว PR / diff / หา bug ในโค้ด</td></tr>
+  <tr><td class="skill-name">delegating-parallel-work</td><td>แตกงานใหญ่ให้ sub-agent ทำขนานกัน แล้วตรวจผลรวมเองก่อนเชื่อ</td><td>งาน 3+ ส่วนอิสระ / หลาย package</td></tr>
+  <tr><td class="skill-name">managing-working-memory</td><td>จดโน้ต WORKING_NOTES.md ให้งานยาวรอดข้าม session และ context compaction</td><td>งานยาว / ทำต่อวันหลัง / หลัง compact</td></tr>
+  <tr><td class="skill-name">outcome-first-reporting</td><td>สรุปแบบผลลัพธ์ขึ้นก่อน · มีหมวด "ยังไม่เสร็จ" ชัดเจน · ไม่เล่านิทานยืดยาว</td><td>ตอนเขียนสรุป / ตอบสถานะ</td></tr>
+  <tr><td class="skill-name">producing-deliverables</td><td>ทำรายงาน/spreadsheet/slide แบบตรวจข้อมูลก่อนคำนวณ + เปิดไฟล์ทวนก่อนส่ง</td><td>งานที่ผลลัพธ์เป็นเอกสาร ไม่ใช่โค้ด</td></tr>
+  <tr><td class="skill-name">extracting-from-images</td><td>อ่านค่าจากภาพ/สแกนแบบ crop–ซูม–ทวนสอบ ไม่เดาตัวเลขที่มองไม่ชัด</td><td>ต้องดึงตัวเลข/ตารางจากรูปภาพ</td></tr>
+  <tr><td class="skill-name">inventorying-capabilities</td><td>สำรวจเครื่องมือ (MCP/skills) ที่มีจริงก่อนบอกว่า "ทำไม่ได้" หรือลงมือแบบอ้อมโลก</td><td>session ที่เชื่อมต่อเครื่องมือพิเศษ</td></tr>
+</table>
+
+<div class="footer">
+  Fable2Opus User Guide v1.0 · กรกฎาคม 2026 · เอกสารเชิงลึก: PLAN.md (แผน+ผลวิเคราะห์) · evals/README.md (วิธีวัดผล) · .claude/hooks/README.md (กลไก hook)<br>
+  หลักคิดของทั้งชุด: <i>"Opus ที่ทำงานเต็มเพดานของตัวเองอย่างสม่ำเสมอ"</i> — วินัยถ่ายทอดได้ ความฉลาดดิบถ่ายทอดไม่ได้
+</div>
+
+</body>
+</html>

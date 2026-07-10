@@ -1,0 +1,5 @@
+{"type": "user", "isSidechain": false, "uuid": "u1", "message": {"role": "user", "content": "Fix module a"}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Edit", "input": {"file_path": "/repo/src/a.py", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Bash", "input": {"command": "cargo test", "description": "Run tests"}}]}}
+{"type": "assistant", "isSidechain": true, "uuid": "a-tool", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Edit", "input": {"file_path": "/repo/src/b.py", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a-text", "message": {"role": "assistant", "content": [{"type": "thinking", "thinking": "..."}, {"type": "text", "text": "Done — cargo test passes."}]}}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark" data-lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F2O — Fable2Opus</title>
+<meta name="description" content="Teach Opus-tier models the working processes of stronger models. 13 process skills + always-on core rules + a claim-gate hook for Claude Code.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <div class="brand">F2O<span class="dim">·</span><span class="brand-sub">Fable2Opus</span></div>
+    <nav class="controls">
+      <button id="lang-toggle" class="ctl" aria-label="Switch language"><span class="lang-th">EN</span><span class="lang-en">ไทย</span></button>
+      <button id="theme-toggle" class="ctl" aria-label="Toggle theme"><span class="on-dark">☀︎</span><span class="on-light">☾</span></button>
+      <a class="ctl ghost" href="https://github.com/Work-in-Problem/F2O" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="lang-th">
+    <h1>สอน Claude Opus ให้ทำงานด้วย<br><em>กระบวนการ</em>ระดับโมเดลท็อป</h1>
+    <p class="lead">ชุด 13 process skills + กฎแกน always-on + hook กันหลอกว่าเสร็จ สำหรับ Claude Code —
+    กลั่นจากการวิเคราะห์ว่า Claude Fable 5 ทำงานต่างจาก Opus 4.8 ตรงไหน แล้วถ่ายทอดเฉพาะส่วนที่เป็น
+    <b>วินัยและขั้นตอน</b> (ไม่ใช่ความฉลาดดิบ)</p>
+    <p class="tagline">"Opus ที่ทำงานเต็มเพดานของตัวเองอย่างสม่ำเสมอ — ไม่ใช่ Fable ในราคาครึ่งเดียว"</p>
+  </div>
+  <div class="lang-en">
+    <h1>Teach Claude Opus the <em>working processes</em> of stronger models</h1>
+    <p class="lead">13 process skills + always-on core rules + a claim-gate hook for Claude Code —
+    distilled from analyzing where Claude Fable 5 outworks Opus 4.8, transferring only the part that is
+    <b>discipline and procedure</b>, not raw intelligence.</p>
+    <p class="tagline">"Opus at its own ceiling, reliably — not Fable at half price."</p>
+  </div>
+  <div class="cta">
+    <a class="btn primary" href="#install"><span class="lang-th">ติดตั้ง</span><span class="lang-en">Install</span></a>
+    <a class="btn" href="https://github.com/Work-in-Problem/F2O" rel="noopener">GitHub · MIT</a>
+    <a class="btn" href="https://github.com/Work-in-Problem/F2O/raw/main/docs/Fable2Opus-User-Guide-TH.pdf" rel="noopener"><span class="lang-th">คู่มือ PDF (ไทย)</span><span class="lang-en">Guide PDF (Thai)</span></a>
+  </div>
+</section>
+
+<!-- ================= INSTALL ================= -->
+<section id="install">
+  <h2><span class="lang-th">ติดตั้ง</span><span class="lang-en">Install</span></h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">A</span>
+      <div>
+        <b>Claude Code plugin</b> <span class="rec"><span class="lang-th">แนะนำ</span><span class="lang-en">recommended</span></span>
+        <div class="dim small"><span class="lang-th">ครบทุกชั้น — skills 13 ตัว + กฎแกนฉีดเข้า session อัตโนมัติ + hook</span><span class="lang-en">The full stack — 13 skills + core rules auto-injected each session + the claim-gate hook</span></div>
+      </div>
+    </div>
+    <pre class="code" data-copy>claude plugin marketplace add Work-in-Problem/F2O
+claude plugin install fable2opus@f2o</pre>
+    <p class="small dim"><span class="lang-th">หรือพิมพ์ <code>/plugin</code> ในแอปแล้วเลือก marketplace <code>Work-in-Problem/F2O</code> · ปิดชั่วคราว: disable plugin หรือ <code>FABLE2OPUS_HOOKS_OFF=1</code></span><span class="lang-en">Or type <code>/plugin</code> in the app and pick the <code>Work-in-Problem/F2O</code> marketplace · to pause: disable the plugin or set <code>FABLE2OPUS_HOOKS_OFF=1</code></span></p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">B</span>
+      <div>
+        <b>npx skills</b>
+        <div class="dim small"><span class="lang-th">ได้เฉพาะ skills 13 ตัว — ต้อง copy กฎแกน (Layer 0) เองตามทาง C ขั้น 2</span><span class="lang-en">Skills only — copy the Layer-0 core rules yourself (step 2 of option C)</span></div>
+      </div>
+    </div>
+    <pre class="code" data-copy>npx skills add Work-in-Problem/F2O --all -y -g</pre>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">C</span>
+      <div>
+        <b><span class="lang-th">ติดตั้งมือจาก clone</span><span class="lang-en">Manual, from a clone</span></b>
+        <div class="dim small"><span class="lang-th">~2 นาที ควบคุมเองทุกชิ้น</span><span class="lang-en">~2 minutes, full control</span></div>
+      </div>
+    </div>
+    <p class="small"><span class="lang-th">1) Skills แบบ global (ครั้งเดียว ใช้ทุกโปรเจกต์):</span><span class="lang-en">1) Skills, globally (once per machine):</span></p>
+    <pre class="code" data-copy>git clone https://github.com/Work-in-Problem/F2O.git && SRC="$PWD/F2O"
+mkdir -p ~/.claude/skills && cp -R "$SRC/skills/." ~/.claude/skills/</pre>
+    <p class="small"><span class="lang-th">2) กฎแกน Layer 0 ลงโปรเจกต์ที่จะใช้ (ทำซ้ำต่อโปรเจกต์):</span><span class="lang-en">2) Layer-0 core rules into each target project:</span></p>
+    <pre class="code" data-copy>cd /path/to/your-project
+cp "$SRC/core/constants.md" ./constants.md
+cp "$SRC/core/CLAUDE-core.md" ./CLAUDE.md   # append instead if CLAUDE.md exists</pre>
+    <p class="small"><span class="lang-th">3) (ทางเลือก) hook กันหลอกว่าเสร็จ:</span><span class="lang-en">3) (Optional) the claim-gate hook:</span></p>
+    <pre class="code" data-copy>mkdir -p .claude/hooks && cp "$SRC/hooks/claim_gate.py" .claude/hooks/
+cat > .claude/settings.json <<'JSON'
+{"hooks":{"Stop":[{"hooks":[{"type":"command","command":"python3",
+  "args":["${CLAUDE_PROJECT_DIR}/.claude/hooks/claim_gate.py"],"timeout":30}]}]}}
+JSON</pre>
+  </div>
+
+  <p class="note"><span class="lang-th"><b>ใช้ยังไงต่อ:</b> ไม่ต้องเรียกอะไร — เปิด session ใน Claude Code (เลือกโมเดล Opus) แล้วสั่งงานปกติ skills โหลดเองตามสถานการณ์ เคล็ดเดียวที่สำคัญ: ให้โจทย์ครบตั้งแต่ข้อความแรก แล้วปล่อยให้ทำจนจบ</span><span class="lang-en"><b>Then what?</b> Nothing to invoke — open a Claude Code session (pick the Opus model) and work normally; skills load themselves by situation. The one tip that matters: give the full spec in your first message, then let it run.</span></p>
+</section>
+
+<!-- ================= LAYERS ================= -->
+<section>
+  <h2><span class="lang-th">ข้างในมีอะไร</span><span class="lang-en">What's inside</span></h2>
+  <div class="grid3">
+    <div class="tile">
+      <div class="tile-k">Layer 0</div>
+      <b><span class="lang-th">กฎแกน always-on</span><span class="lang-en">Always-on core rules</span></b>
+      <p class="small dim"><span class="lang-th">ห้ามบอก "เสร็จ" โดยไม่มีหลักฐาน · ไม่ถามเรื่องเล็ก (triage A/B/C) · โน้ตไฟล์เดียว · ตารางค่าคงที่ C1–C18 — plugin ฉีดให้ทุก session อัตโนมัติ</span><span class="lang-en">No "done" without evidence · no trivial questions (A/B/C triage) · one notes file · canonical constants C1–C18 — auto-injected by the plugin every session</span></p>
+    </div>
+    <div class="tile">
+      <div class="tile-k">Layer 1</div>
+      <b><span class="lang-th">Skills 13 ตัว</span><span class="lang-en">13 process skills</span></b>
+      <p class="small dim"><span class="lang-th">คู่มือเชิงลึกที่โหลดเองอัตโนมัติตามสถานการณ์ — แก้บั๊ก, รีวิว, วางแผน, จัดการงานยาว, ทำเอกสาร ฯลฯ</span><span class="lang-en">Deep playbooks that load themselves by situation — debugging, review, planning, long-horizon work, deliverables, and more</span></p>
+    </div>
+    <div class="tile">
+      <div class="tile-k">Layer 2</div>
+      <b><span class="lang-th">Hook บังคับจริง</span><span class="lang-en">Enforcement hook</span></b>
+      <p class="small dim"><span class="lang-th">สคริปต์บล็อกข้อความ "done/fixed" ที่ edit ล่าสุดมาหลัง verification ล่าสุด — เพราะ prose เสื่อมตาม context ยาว แต่ hook ไม่เสื่อม</span><span class="lang-en">Blocks "done/fixed" messages whose last edit postdates the last verification — prose adherence decays over long contexts; hooks don't</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARISON ================= -->
+<section>
+  <h2><span class="lang-th">ใช้ F2O กับไม่ใช้ ต่างกันอย่างไร</span><span class="lang-en">With F2O vs without</span></h2>
+  <div class="tbl-scroll"><table>
+    <thead><tr>
+      <th><span class="lang-th">สถานการณ์</span><span class="lang-en">Situation</span></th>
+      <th><span class="lang-th">Opus เพียวๆ *</span><span class="lang-en">Plain Opus *</span></th>
+      <th>Opus + F2O</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><span class="lang-th">บั๊กเป็นๆ หายๆ</span><span class="lang-en">Flaky bug</span></td><td class="no"><span class="lang-th">ผ่าน 1 รอบก็ประกาศ "fixed"</span><span class="lang-en">One green run → "fixed"</span></td><td class="ok"><span class="lang-th">รันซ้ำ 10–30 รอบ รายงานตัวเลขก่อน/หลัง</span><span class="lang-en">10–30 reruns, pre/post counts reported</span></td></tr>
+      <tr><td><span class="lang-th">คำว่า "เสร็จแล้ว"</span><span class="lang-en">"It's done"</span></td><td class="no"><span class="lang-th">ต้องเชื่อคำพูด</span><span class="lang-en">Take its word</span></td><td class="ok"><span class="lang-th">ทุก claim ชี้หลักฐาน · hook บล็อกถ้าไม่มีจริง</span><span class="lang-en">Every claim cites evidence · hook blocks otherwise</span></td></tr>
+      <tr><td><span class="lang-th">คำถามระหว่างงาน</span><span class="lang-en">Mid-task questions</span></td><td class="no"><span class="lang-th">ถามเรื่องเล็กบ่อย จบด้วย "เอาไหมครับ?"</span><span class="lang-en">Asks small things, ends with "want me to…?"</span></td><td class="ok"><span class="lang-th">เรื่องย้อนกลับได้ตัดสินใจเอง + จดให้ veto ทีหลัง</span><span class="lang-en">Decides reversibles, logs them for cheap veto</span></td></tr>
+      <tr><td><span class="lang-th">เวอร์ชัน/API facts</span><span class="lang-en">Version/API facts</span></td><td class="no"><span class="lang-th">ตอบจากความจำ (อาจล้าสมัย)</span><span class="lang-en">From memory (possibly stale)</span></td><td class="ok"><span class="lang-th">ค้นเว็บ/อ่านไฟล์จริงก่อนพูด</span><span class="lang-en">Web/disk lookup before asserting</span></td></tr>
+      <tr><td><span class="lang-th">ขอบเขตการแก้โค้ด</span><span class="lang-en">Change scope</span></td><td class="no"><span class="lang-th">refactor แถม diff บวม</span><span class="lang-en">Drive-by refactors, bloated diffs</span></td><td class="ok"><span class="lang-th">diff ตรงโจทย์ ปัญหาข้างเคียงถูก "จดรายงาน"</span><span class="lang-en">Surgical diffs; adjacent issues get a "Noticed" line</span></td></tr>
+      <tr><td><span class="lang-th">Review แบบ "เอาเรื่องใหญ่"</span><span class="lang-en">"High-severity only" review</span></td><td class="no"><span class="lang-th">ตกหล่นบั๊ก (recall ร่วง — Anthropic วัดเอง)</span><span class="lang-en">Misses bugs (recall drops — Anthropic's own data)</span></td><td class="ok"><span class="lang-th">หาให้หมดก่อน ค่อยกรองตอนรายงาน</span><span class="lang-en">Find everything first, filter only at reporting</span></td></tr>
+      <tr><td><span class="lang-th">งานหลาย requirement</span><span class="lang-en">Many requirements</span></td><td class="no"><span class="lang-th">ข้อท้ายๆ หล่นหาย</span><span class="lang-en">Trailing items get dropped</span></td><td class="ok"><span class="lang-th">checklist ครบ ปิดงานเทียบหลักฐานรายข้อ</span><span class="lang-en">Full checklist, closed item-by-item with evidence</span></td></tr>
+      <tr><td><span class="lang-th">งานยาว/ข้ามวัน</span><span class="lang-en">Long-horizon work</span></td><td class="no"><span class="lang-th">ลืมบริบทหลัง context เต็ม</span><span class="lang-en">Loses the thread after compaction</span></td><td class="ok"><span class="lang-th">โน้ตไฟล์เดียว + พิธีฟื้นบริบทจากหลักฐานจริง</span><span class="lang-en">One notes file + evidence-based recovery ritual</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="small dim">* <span class="lang-th">อิงพฤติกรรมตั้งต้นของ Opus ตามเอกสาร migration ของ Anthropic เอง · หลักฐานที่มีแล้ว: instruction แบบนี้ลด ask-rate ~12 จุด (Anthropic วัด) และ A/B ของโปรเจกต์พบการรายงานปัญหาข้างเคียงเพิ่มจาก 1/5 → 5/5 เมื่อโหลด skill · สิ่งที่ F2O ให้ไม่ได้: ความฉลาดดิบ</span><span class="lang-en">* Left column = Opus's documented default behavior per Anthropic's own migration guidance · measured so far: a similar instruction cut ask-rate ~12pp (Anthropic), and this project's A/B saw adjacent-issue reporting rise 1/5 → 5/5 with the skill loaded · what F2O cannot give you: raw intelligence.</span></p>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section>
+  <h2><span class="lang-th">Skills ทั้ง 13 ตัว</span><span class="lang-en">The 13 skills</span></h2>
+  <div class="skills">
+    <div class="sk"><code>verifying-before-claiming</code><p><span class="lang-th">พิสูจน์ก่อนพูดว่าเสร็จ — repro บั๊กก่อนแก้ รัน flow จริง อ่าน output ไม่ใช่ exit code</span><span class="lang-en">Prove before claiming — reproduce first, drive the real flow, read output not exit codes</span></p></div>
+    <div class="sk"><code>finishing-the-turn</code><p><span class="lang-th">ไม่ถามเรื่องเล็ก ทำงานจนจบเทิร์น ห้ามจบด้วยคำสัญญา</span><span class="lang-en">No trivial questions, finish the turn, never end on a promise</span></p></div>
+    <div class="sk"><code>search-first-context</code><p><span class="lang-th">ค้น/อ่านก่อนพูดหรือแก้ + งบการอ่านกัน context บวม</span><span class="lang-en">Look before asserting or editing + context-budget discipline</span></p></div>
+    <div class="sk"><code>planning-to-done</code><p><span class="lang-th">แตกโจทย์เป็น checklist ครบก่อนลงมือ ปิดงานด้วยหลักฐานรายข้อ</span><span class="lang-en">Extract every requirement first; close with per-item evidence</span></p></div>
+    <div class="sk"><code>scoping-code-changes</code><p><span class="lang-th">diff เล็กตรงโจทย์ ไม่ refactor แถม</span><span class="lang-en">Surgical diffs, no drive-by refactors</span></p></div>
+    <div class="sk"><code>root-causing-bugs</code><p><span class="lang-th">debug แบบตั้งสมมติฐาน–ทดลอง จัดการ flaky แบบสถิติ</span><span class="lang-en">Hypothesis-driven debugging, statistical flake handling</span></p></div>
+    <div class="sk"><code>reviewing-code</code><p><span class="lang-th">หาให้หมดก่อน ค่อยกรอง · ตรวจทุก finding กับโค้ดจริง</span><span class="lang-en">Enumerate all findings, filter late, verify each against source</span></p></div>
+    <div class="sk"><code>delegating-parallel-work</code><p><span class="lang-th">แตกงานให้ sub-agent ทำขนาน แล้วตรวจรวมเองก่อนเชื่อ</span><span class="lang-en">Fan out independent work, trust-but-verify the union</span></p></div>
+    <div class="sk"><code>managing-working-memory</code><p><span class="lang-th">โน้ตที่รอดข้าม session และ compaction</span><span class="lang-en">Notes that survive sessions and compaction</span></p></div>
+    <div class="sk"><code>outcome-first-reporting</code><p><span class="lang-th">สรุปแบบผลลัพธ์ขึ้นก่อน มีหมวด "ยังไม่เสร็จ" ชัดๆ</span><span class="lang-en">Verdict-first reports with an explicit "not done" section</span></p></div>
+    <div class="sk"><code>producing-deliverables</code><p><span class="lang-th">รายงาน/spreadsheet/slide ที่ตรวจข้อมูลก่อนคำนวณ + เปิดไฟล์ทวนก่อนส่ง</span><span class="lang-en">Docs/sheets/decks: profile data first, reopen the file before "done"</span></p></div>
+    <div class="sk"><code>extracting-from-images</code><p><span class="lang-th">อ่านค่าจากภาพแบบ crop–ซูม–ทวนสอบ ไม่เดาจุดที่มองไม่ชัด</span><span class="lang-en">Crop, zoom, transcribe-then-verify — never guess an illegible cell</span></p></div>
+    <div class="sk"><code>inventorying-capabilities</code><p><span class="lang-th">สำรวจเครื่องมือที่มีจริงก่อนบอกว่า "ทำไม่ได้"</span><span class="lang-en">Inventory the real tool surface before saying "can't"</span></p></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <span><span class="lang-th">สร้างโดย Claude Fable 5 จากเอกสาร migration ของ Anthropic — วิเคราะห์ 10 มิติ, adversarial critique, ทดสอบ A/B บน Opus จริง</span><span class="lang-en">Designed by Claude Fable 5 from Anthropic's own migration guidance — 10 dimensions analyzed, adversarially critiqued, A/B-tested on real Opus runs</span></span>
+    <span class="dim">MIT © 2026 Work in Problem · <a href="https://github.com/Work-in-Problem/F2O" rel="noopener">github.com/Work-in-Problem/F2O</a></span>
+  </div>
+</footer>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>

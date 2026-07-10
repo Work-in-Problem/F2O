@@ -1,0 +1,27 @@
+{
+  "description": "Fable2Opus enforcement hooks: Layer-0 context injection at session start + claim-gate on stop. Disable temporarily with FABLE2OPUS_HOOKS_OFF=1.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/session_context.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/claim_gate.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

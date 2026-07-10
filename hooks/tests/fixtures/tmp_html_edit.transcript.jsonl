@@ -1,0 +1,4 @@
+{"type": "user", "isSidechain": false, "uuid": "u1", "message": {"role": "user", "content": "Update the PDF guide"}}
+{"type": "assistant", "isSidechain": false, "uuid": "a1", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Bash", "input": {"command": "bash run_hook_tests.sh", "description": "Run tests"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a2", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t2", "name": "Edit", "input": {"file_path": "/private/tmp/claude-501/session-x/scratchpad/usage-guide.html", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a3", "message": {"role": "assistant", "content": [{"type": "text", "text": "Done — the guide PDF is fixed and re-rendered."}]}}

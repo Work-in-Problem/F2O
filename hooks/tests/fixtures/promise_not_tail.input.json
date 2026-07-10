@@ -1,0 +1,9 @@
+{
+  "session_id": "fixture-session",
+  "transcript_path": "__TRANSCRIPT__",
+  "cwd": "/tmp",
+  "hook_event_name": "Stop",
+  "stop_hook_active": false,
+  "permission_mode": "default",
+  "last_assistant_message": "I'll now walk you through what was done in this session. The parser module was rewritten to use the tokenizer, the config loader gained a schema validation pass, and the CLI surface stayed unchanged. Every touched module kept its public signatures, and the integration suite plus the linter ran clean after the final edit — twelve of twelve cases green with zero failures across the board on the final run."
+}

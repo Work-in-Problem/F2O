@@ -1,0 +1,9 @@
+{
+  "session_id": "fixture-session",
+  "transcript_path": "__TRANSCRIPT__",
+  "cwd": "/tmp",
+  "hook_event_name": "Stop",
+  "stop_hook_active": false,
+  "permission_mode": "default",
+  "last_assistant_message": "All four call sites are updated and the build is clean. The next step is to deploy to staging, which is your call — stopping here as requested."
+}
