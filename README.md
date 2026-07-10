@@ -19,14 +19,15 @@ claude plugin install f2o@f2o
 หรือพิมพ์ `/plugin` ในแอปแล้วเลือก marketplace `Work-in-Problem/F2O` — เปิดใช้แล้วกฎ Layer 0 ถูกฉีดเข้า**ทุก** session
 อัตโนมัติผ่าน SessionStart hook (ไม่ต้อง copy CLAUDE.md ลงโปรเจกต์) · ปิดชั่วคราว: disable plugin หรือ `FABLE2OPUS_HOOKS_OFF=1`
 
-**ช่องทาง B — npx skills (เฉพาะ skills 13 ตัว, สำหรับสาย [skills.sh](https://www.skills.sh)):**
+**ช่องทาง B — npx skills (สำหรับสาย [skills.sh](https://www.skills.sh) · ครบทุกชั้นได้ใน 2 ขั้น):**
 
 ```
-npx skills add Work-in-Problem/F2O --all -y -g
+npx skills add Work-in-Problem/F2O -g -y --skill '*' --agent claude-code
 ```
 
-⚠️ ช่องทางนี้ไม่พกกฎแกน (Layer 0) กับ hook ไปด้วย — skills อ้างอิงกฎแกนอยู่ ต้อง copy `core/CLAUDE-core.md` + `core/constants.md`
-เข้าโปรเจกต์เองตาม [USAGE.md](USAGE.md) §2.5
+ครบทุกชั้นเท่าช่องทาง A ด้วย "ขั้นที่ 2" (ฉีดกฎแกนทุก session + claim-gate hook ระดับ user, copy ก้อนเดียว
+รันซ้ำได้) — ดูใน [USAGE.md](USAGE.md) §2 ช่องทาง B หรือบนเว็บ [f2o.workinproblem.com](https://f2o.workinproblem.com)
+· อยากลงให้ agent อื่นด้วยใช้ `--all` แทน (บรรทัดแดง `eve`/`promptscript` ไม่เป็นอันตราย)
 
 **คำสั่งควบคุม / Commands** (หลังติดตั้ง plugin — เปิดอัตโนมัติ):
 `/f2o:off` soft-off (hooks เงียบ, สกิลยังใช้ได้) · `/f2o:on` เปิดกลับ · `/f2o:status` ดูสถานะ ·

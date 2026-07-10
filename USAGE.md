@@ -61,11 +61,34 @@ claude plugin install f2o@f2o
 (หรือพิมพ์ `/plugin` ในแอปแล้วเลือก marketplace `Work-in-Problem/F2O`) — เปิดใช้แล้วกฎ Layer 0
 จะถูกฉีดเข้า**ทุก** session อัตโนมัติ ปิดชั่วคราวได้ด้วย disable plugin หรือ `FABLE2OPUS_HOOKS_OFF=1`
 
-**ช่องทาง B — npx skills (ได้เฉพาะ skills 13 ตัว):**
+**ช่องทาง B — npx skills (ครบทุกชั้นได้ใน 2 ขั้น):**
+
+ขั้น 1 — skills 13 ตัว (เจาะจง Claude Code · อยากลงทุก agent ใช้ `--all` แทน — บรรทัดแดงของ
+`eve`/`promptscript` ไม่เป็นอันตราย):
 ```
-npx skills add Work-in-Problem/F2O --all -y -g
+npx skills add Work-in-Problem/F2O -g -y --skill '*' --agent claude-code
 ```
-ช่องทางนี้*ไม่พก*กฎแกน (Layer 0) กับ hook — ต้อง copy เองตามขั้น 2–3 ของหัวข้อถัดไป
+ขั้น 2 — กฎแกนฉีดอัตโนมัติทุก session + claim-gate hook (ระดับ user · copy ทั้งก้อน รันซ้ำได้ไม่เบิ้ล
+· **สายช่องทาง A ห้ามทำ** — plugin มีครบแล้ว จะฉีดกฎซ้ำ):
+```sh
+git clone --depth 1 https://github.com/Work-in-Problem/F2O /tmp/f2o-src
+mkdir -p ~/.claude/f2o && cp -R /tmp/f2o-src/hooks /tmp/f2o-src/core ~/.claude/f2o/ && rm -rf /tmp/f2o-src
+python3 - <<'PY'
+import json, os
+p = os.path.expanduser('~/.claude/settings.json')
+s = json.load(open(p)) if os.path.exists(p) else {}
+h = s.setdefault('hooks', {})
+def add(ev, cmd):
+    arr = h.setdefault(ev, [])
+    if not any(cmd in json.dumps(x) for x in arr):
+        arr.append({'hooks': [{'type': 'command', 'command': cmd, 'timeout': 30}]})
+add('SessionStart', 'python3 ~/.claude/f2o/hooks/session_context.py')
+add('Stop', 'python3 ~/.claude/f2o/hooks/claim_gate.py')
+json.dump(s, open(p, 'w'), indent=2); print('F2O hooks -> ' + p)
+PY
+```
+ปิดชั่วคราว: `touch ~/.claude/f2o.disabled` (เปิดกลับ: `rm` ไฟล์เดิม) · ถอน: ลบ 2 hooks ที่เพิ่มใน
+`~/.claude/settings.json` แล้ว `rm -rf ~/.claude/f2o`
 
 ### คำสั่งควบคุม (ทาง A — หลังติดตั้งเปิดอัตโนมัติ)
 

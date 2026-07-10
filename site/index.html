@@ -79,7 +79,8 @@ claude plugin install f2o@f2o</pre>
       </div>
     </div>
     <p class="small"><span class="lang-th">ขั้น 1 — skills 13 ตัว:</span><span class="lang-en">Step 1 — the 13 skills:</span></p>
-    <pre class="code" data-copy>npx skills add Work-in-Problem/F2O --all -y -g</pre>
+    <pre class="code" data-copy>npx skills add Work-in-Problem/F2O -g -y --skill '*' --agent claude-code</pre>
+    <p class="small dim"><span class="lang-th">อยากลงให้ AI agent อื่นๆ บนเครื่องด้วย ใช้ <code>--all</code> แทนได้ — จะเห็นบรรทัดแดงของ <code>eve</code>/<code>promptscript</code> ("does not support global skill installation") ซึ่ง<b>ไม่เป็นอันตราย</b>: สอง agent นั้นไม่รับการติดตั้งระดับ user ส่วน agent อื่นลงสำเร็จปกติ</span><span class="lang-en">Want it in your other AI agents too? Use <code>--all</code> instead — you will see red <code>eve</code>/<code>promptscript</code> lines ("does not support global skill installation"), which are <b>harmless</b>: those two agents reject user-level installs; everything else installs fine.</span></p>
     <p class="small"><span class="lang-th">ขั้น 2 — กฎแกนฉีดทุก session + hook (คำสั่งเดียว copy ทั้งก้อน · รันซ้ำได้ ไม่เบิ้ล):</span><span class="lang-en">Step 2 — per-session core injection + the hook (one paste, idempotent):</span></p>
     <pre class="code" data-copy>git clone --depth 1 https://github.com/Work-in-Problem/F2O /tmp/f2o-src
 mkdir -p ~/.claude/f2o &amp;&amp; cp -R /tmp/f2o-src/hooks /tmp/f2o-src/core ~/.claude/f2o/ &amp;&amp; rm -rf /tmp/f2o-src
