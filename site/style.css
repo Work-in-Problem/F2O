@@ -191,20 +191,6 @@ footer { border-top: 1px solid var(--line); margin-top: 34px; }
 th .lang-th { font-weight: 600; }
 .foot .lang-th { font-weight: 400; }
 
-/* ---------- hero proof strip ---------- */
-.proof { margin-top: 34px; border: 1px solid var(--line2); border-radius: 12px; background: var(--panel);
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); overflow: hidden; }
-.proof-item { padding: 16px 20px; border-right: 1px solid var(--line); }
-.proof-item:last-of-type { border-right: none; }
-.proof-num { font-family: ui-monospace, Menlo, monospace; font-size: 1.5rem; font-weight: 800; color: var(--hz-text); letter-spacing: -.5px; }
-.proof-vs { font-size: .6em; color: var(--dim); font-weight: 600; }
-.proof-lab { font-size: .74em; color: var(--dim); margin-top: 3px; line-height: 1.5; }
-.proof-more { grid-column: 1 / -1; display: block; text-align: center; padding: 9px; font-size: .78em;
-  font-family: ui-monospace, Menlo, monospace; color: var(--hz-text); text-decoration: none;
-  border-top: 1px solid var(--line); background: var(--panel2); }
-.proof-more:hover { text-decoration: underline; }
-@media (max-width: 620px) { .proof-item { border-right: none; border-bottom: 1px solid var(--line); } }
-
 /* ---------- nerd paper ---------- */
 .paper { padding: 6px 24px 20px; border-top: 1px solid var(--line); }
 .paper h4 { font-family: ui-monospace, Menlo, monospace; font-size: .78em; letter-spacing: 2px;
@@ -218,10 +204,9 @@ th .lang-th { font-weight: 600; }
 .paper-ul li b, .paper-ul li code { color: var(--ink); }
 .paper-tbl { min-width: 560px; font-size: .84em; }
 .paper .tbl-scroll { margin: 6px 0 10px; }
-.proof-more .lang-th, .proof-lab .lang-th { font-family: var(--sans); letter-spacing: .3px; }
 
 /* ---------- typography pass: clean wrapping for mixed Thai/English ---------- */
-p, li, summary, .lead, .tagline, .note, .proof-lab {
+p, li, summary, .lead, .tagline, .note {
   text-wrap: pretty; overflow-wrap: break-word;
 }
 /* Thai never gets tracking — it breaks the script's rhythm */
@@ -229,5 +214,3 @@ p, li, summary, .lead, .tagline, .note, .proof-lab {
 /* tall Thai vowel/tone marks need slightly looser lines in dense blocks */
 .paper p, .paper-ul li, .nerd-cell li, .faq p { line-height: 1.85; }
 .sk p { line-height: 1.7; }
-/* keep numbers+units together in the proof strip */
-.proof-num { white-space: nowrap; }

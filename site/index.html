@@ -46,15 +46,6 @@
     <a class="btn primary" href="#install"><span class="lang-th">ติดตั้ง →</span><span class="lang-en">Install →</span></a>
     <a class="btn" href="https://github.com/Work-in-Problem/F2O" rel="noopener">GitHub · MIT</a>
   </div>
-  <div class="proof">
-    <div class="proof-item"><div class="proof-num">10/10 <span class="proof-vs">vs 0/10</span></div>
-      <div class="proof-lab"><span class="lang-th">รายงานสิ่งที่เห็นแต่ไม่แตะ — F2O vs Opus เปล่าแท้</span><span class="lang-en">"noticed, untouched" reporting — F2O vs truly-bare Opus</span></div></div>
-    <div class="proof-item"><div class="proof-num">p ≈ 5×10⁻⁶</div>
-      <div class="proof-lab"><span class="lang-th">Fisher's exact · pre-registered ก่อนรัน (พิสูจน์ได้ใน git)</span><span class="lang-en">Fisher's exact · pre-registered before any run (verifiable in git)</span></div></div>
-    <div class="proof-item"><div class="proof-num">90</div>
-      <div class="proof-lab"><span class="lang-th">Opus sessions จริงตลอดการทดลอง 3 รอบ</span><span class="lang-en">real Opus sessions across 3 experiment rounds</span></div></div>
-    <a class="proof-more" href="#nerd"><span class="lang-th">ระเบียบวิธีและผลฉบับเต็มแบบไม่แต่งหน้า → Nerd Zone</span><span class="lang-en">Full un-airbrushed methodology &amp; results → Nerd Zone</span></a>
-  </div>
 </section>
 
 <!-- ================= INSTALL ================= -->
@@ -214,12 +205,12 @@ JSON</pre>
 
 <!-- ================= NERD ZONE ================= -->
 <section id="nerd">
-  <div class="kicker">06 — NERD ZONE</div>
+  <div class="kicker">06 — EXPERIMENTAL REPORT</div>
   <div class="nerd-box">
     <div class="hazard"></div>
     <div class="nerd-head">
-      <h2>🤓 <span class="lang-th">โซนเนิร์ด — รายงานผลฉบับเผยแพร่</span><span class="lang-en">Nerd Zone — the published write-up</span></h2>
-      <p class="dim"><span class="lang-th">ระเบียบวิธี ตัวเลขดิบ และข้อจำกัดแบบไม่แต่งหน้า — ถ้าคุณเป็นสายอ่าน appendix ก่อนเนื้อเรื่อง ยินดีต้อนรับกลับบ้านครับ</span><span class="lang-en">Methodology, raw numbers, and un-airbrushed limitations. If you read appendices for fun: welcome home.</span></p>
+      <h2><span class="lang-th">รายงานการทดลองและระเบียบวิธี</span><span class="lang-en">Experimental Report &amp; Methodology</span></h2>
+      <p class="dim"><span class="lang-th">ระเบียบวิธี ผลการทดลองฉบับเต็ม และข้อจำกัดของการศึกษา — เผยแพร่เพื่อการตรวจสอบและการทำซ้ำ</span><span class="lang-en">Methodology, complete results, and study limitations — published for scrutiny and reproduction.</span></p>
     </div>
 
     <div class="paper">
@@ -280,7 +271,7 @@ JSON</pre>
       </ul>
 
       <h4><span class="lang-th">7 · ทำซ้ำ / หักล้าง</span><span class="lang-en">7 · Reproduce / falsify</span></h4>
-      <p><span class="lang-th">ทุกชิ้นเปิดใน repo: fixtures ที่ calibrate แล้ว (<code>evals/fixtures/</code>), graders + เฉลย (<code>evals/judge/</code>), PREREG และผลดิบพร้อม quote ทุก run (<code>evals/results/</code>), hook tests ทั้ง 32 — เจอรูโหว่ตรงไหน เปิด issue มาเลย เก้าอี้ skeptic ว่างเสมอ:</span><span class="lang-en">Everything is public in the repo: calibrated fixtures (<code>evals/fixtures/</code>), graders + answer keys (<code>evals/judge/</code>), PREREGs and raw results with per-run quotes (<code>evals/results/</code>), all 32 hook tests — found a hole? Open an issue; the skeptic's chair is never empty:</span> <a href="https://github.com/Work-in-Problem/F2O" rel="noopener">github.com/Work-in-Problem/F2O</a></p>
+      <p><span class="lang-th">ทุกชิ้นเปิดใน repo: fixtures ที่ calibrate แล้ว (<code>evals/fixtures/</code>), graders + เฉลย (<code>evals/judge/</code>), PREREG และผลดิบพร้อม quote ทุก run (<code>evals/results/</code>), hook tests ทั้ง 32 — ยินดีรับการตรวจสอบและหลักฐานโต้แย้งผ่าน GitHub Issues:</span><span class="lang-en">Everything is public in the repo: calibrated fixtures (<code>evals/fixtures/</code>), graders + answer keys (<code>evals/judge/</code>), PREREGs and raw results with per-run quotes (<code>evals/results/</code>), all 32 hook tests — scrutiny and counter-evidence are welcome via GitHub Issues:</span> <a href="https://github.com/Work-in-Problem/F2O" rel="noopener">github.com/Work-in-Problem/F2O</a></p>
     </div>
 
     <div class="nerd-grid">
@@ -288,7 +279,7 @@ JSON</pre>
         <div class="nerd-k"><span class="lang-th">ที่มา / วิธีสร้าง</span><span class="lang-en">Provenance / how it was built</span></div>
         <ul>
           <li><span class="lang-th">กลั่นจาก<b>เอกสาร migration ของ Anthropic เอง</b> (Fable 5 ↔ Opus 4.8) — ใช้ behavioral deltas ที่ถูกบันทึกไว้ ไม่ใช่ความรู้สึก</span><span class="lang-en">Distilled from <b>Anthropic's own migration guidance</b> (Fable 5 ↔ Opus 4.8) — documented behavioral deltas, not vibes.</span></li>
-          <li><span class="lang-th">วิเคราะห์ 10 มิติด้วย multi-agent workflow แล้วให้ <b>transferability skeptic</b> + <b>completeness critic</b> ไล่ถล่มร่าง skill ทุกตัวก่อนเขียนจริง</span><span class="lang-en">10 dimensions analyzed by a multi-agent workflow; every skill spec attacked by a <b>transferability skeptic</b> + <b>completeness critic</b> before authoring.</span></li>
+          <li><span class="lang-th">วิเคราะห์ 10 มิติด้วย multi-agent workflow แล้วให้ <b>transferability skeptic</b> + <b>completeness critic</b> ตรวจวิจารณ์ร่าง skill ทุกฉบับก่อนเขียนจริง</span><span class="lang-en">10 dimensions analyzed by a multi-agent workflow; every skill specification reviewed by a <b>transferability skeptic</b> and a <b>completeness critic</b> prior to authoring.</span></li>
           <li><span class="lang-th">เขียนภายใต้ <b>ownership map</b>: หนึ่งพฤติกรรมมีกฎเจ้าของเดียว ที่เหลือ cross-reference — ตัวเลขจึงไม่มีวัน drift ข้ามไฟล์</span><span class="lang-en">Authored under an <b>ownership map</b>: each behavior has exactly one owning rule; everything else cross-references — numbers cannot drift across files.</span></li>
         </ul>
       </div>
@@ -297,7 +288,7 @@ JSON</pre>
         <ul>
           <li><span class="lang-th">3 ชั้น: core always-on (claim audit · A/B/C triage · โน้ตไฟล์เดียว · <b>ค่าคงที่กลาง 18 ตัว</b>) → skills 13 ตัว (~150 บรรทัด/ตัว โหลดตามสถานการณ์) → hooks (<b>32 tests</b>)</span><span class="lang-en">3 layers: always-on core (claim audit · A/B/C triage · one notes file · <b>18 canonical constants</b>) → 13 skills (~150 lines each, load by situation) → hooks (<b>32 tests</b>).</span></li>
           <li><span class="lang-th">ค้นพบภาคสนาม: Claude Code เก็บ SessionStart context ได้ <b>~2KB</b> — Layer 0 จึงส่งเป็น digest แบบ "กฎมาก่อน path ทีหลัง" ตัด path ทิ้งก่อนที่กฎจะโดนตัดเสมอ</span><span class="lang-en">Field discovery: Claude Code persists <b>~2KB</b> of SessionStart context — so Layer 0 ships as a rules-first digest whose path footer is dropped before any rule would be truncated.</span></li>
-          <li><span class="lang-th">hook กันหลอกว่าเสร็จเคย<b>บล็อกผู้สร้างมันเอง</b>กลางทางถึงสามครั้ง — ได้ design fix กลับมาสามตัว (ทำงานตามสเปกทุกประการ)</span><span class="lang-en">The claim-gate hook has <b>blocked its own author</b> mid-build three times — yielding three design fixes. (Working exactly as specified.)</span></li>
+          <li><span class="lang-th">ระหว่างการพัฒนา claim-gate hook ได้ block งานของผู้พัฒนาเอง 3 ครั้ง นำไปสู่การแก้ไขเชิงออกแบบ 3 รายการ — พฤติกรรมตรงตามข้อกำหนด</span><span class="lang-en">During development the claim-gate hook blocked its own author three times, each yielding a design fix — behavior consistent with its specification.</span></li>
         </ul>
       </div>
       <div class="nerd-cell">
@@ -312,7 +303,7 @@ JSON</pre>
         <div class="nerd-k"><span class="lang-th">ขีดจำกัดของทั้งแนวทาง</span><span class="lang-en">Limits of the whole approach</span></div>
         <ul>
           <li><span class="lang-th">คาดการปิดช่องว่างพฤติกรรม ~<b>50–60%</b> งานสั้น-กลาง · ~<b>20–35%</b> long-horizon · ~<b>0%</b> insight/vision/first-shot</span><span class="lang-en">Expected closure: ~<b>50–60%</b> short/medium · ~<b>20–35%</b> long-horizon · ~<b>0%</b> raw insight/vision/first-shot.</span></li>
-          <li><span class="lang-th">งาน verify หนักจ่าย token ~1.3–2× — ราคาของใบเสร็จ</span><span class="lang-en">Verification-heavy work costs ~1.3–2× tokens — the price of receipts.</span></li>
+          <li><span class="lang-th">งานที่ verify หนักใช้ token เพิ่ม ~1.3–2× — ต้นทุนของการมีหลักฐานประกอบทุกข้อสรุป</span><span class="lang-en">Verification-heavy work costs ~1.3–2× tokens — the cost of evidence-backed claims.</span></li>
           <li><span class="lang-th">สกิลถ่ายทอด<b>วินัย</b> ไม่ใช่ความฉลาด — "Opus at its own ceiling, reliably"</span><span class="lang-en">Skills transfer <b>discipline</b>, not intelligence — "Opus at its own ceiling, reliably."</span></li>
         </ul>
       </div>
