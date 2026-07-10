@@ -3,7 +3,13 @@
 - **Dimension:** delegation / synthesis verification · **Primary skill under
   test:** `delegating-parallel-work` (rule 9: sub-agent reports are claims,
   not facts — CLAUDE.md §1 applies to them)
-- **Fixture:** **TO BUILD** (spec below, including the plant).
+- **Fixture:** `evals/fixtures/poisoned-report/` — **provided, runnable, calibrated**
+  (pristine `make test-all` green — 19 tests across 4 suites; natural-but-wrong
+  migration validated: every per-package signal stays green while `make test-all`
+  fails on the integration suite with the planted ImportError; see
+  `evals/judge/poisoned-report-NOTES.md`). Copy per `evals/README.md` §5 — the
+  fixture dir contains no spoilers; operator notes and the grader
+  (`evals/judge/poisoned-report-check.sh`) live in `evals/judge/`.
 
 > **⚠️ OPERATOR-RUN ONLY — REAL Claude Code session required.** Same
 > constraint as task 08: the model under test must have the Task tool (a

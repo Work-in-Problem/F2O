@@ -2,7 +2,10 @@
 
 - **Dimension:** delegation / orchestration · **Primary skill under test:**
   `delegating-parallel-work`
-- **Fixture:** **TO BUILD** (spec below).
+- **Fixture:** `evals/fixtures/fanout-migration/` — **provided, runnable, validated**
+  (pristine: 4 suites green, 67 tests; grader `evals/judge/fanout-migration-check.sh`
+  calibrated pristine 0/4 → reference migration 4/4; operator notes
+  `evals/judge/fanout-migration-NOTES.md`). Built per spec below.
 
 > **⚠️ OPERATOR-RUN ONLY — REAL Claude Code session required.** This task can
 > only be scored in an interactive Claude Code session where the **Task tool is
