@@ -127,3 +127,11 @@ footer { border-top: 1px solid var(--line); margin-top: 30px; }
   .code { padding-right: 16px; padding-top: 40px; }
   .copy-btn { top: 6px; right: 6px; }
 }
+
+/* ---------- skill shorthand chips + FAQ ---------- */
+.sk-short { float: right; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .72em; color: var(--dim); border: 1px solid var(--line); border-radius: 6px; padding: 1px 7px; margin-left: 8px; }
+.faq { border: 1px solid var(--line); border-radius: 12px; background: var(--bg2); padding: 12px 16px; margin-bottom: 10px; }
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq summary::marker { color: var(--accent); }
+.faq p { margin-top: 8px; font-size: .92em; color: var(--dim); }
+.faq p b { color: var(--ink); }

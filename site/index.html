@@ -149,20 +149,38 @@ JSON</pre>
 <section>
   <h2><span class="lang-th">Skills ทั้ง 13 ตัว</span><span class="lang-en">The 13 skills</span></h2>
   <div class="skills">
-    <div class="sk"><code>verifying-before-claiming</code><p><span class="lang-th">พิสูจน์ก่อนพูดว่าเสร็จ — repro บั๊กก่อนแก้ รัน flow จริง อ่าน output ไม่ใช่ exit code</span><span class="lang-en">Prove before claiming — reproduce first, drive the real flow, read output not exit codes</span></p></div>
-    <div class="sk"><code>finishing-the-turn</code><p><span class="lang-th">ไม่ถามเรื่องเล็ก ทำงานจนจบเทิร์น ห้ามจบด้วยคำสัญญา</span><span class="lang-en">No trivial questions, finish the turn, never end on a promise</span></p></div>
-    <div class="sk"><code>search-first-context</code><p><span class="lang-th">ค้น/อ่านก่อนพูดหรือแก้ + งบการอ่านกัน context บวม</span><span class="lang-en">Look before asserting or editing + context-budget discipline</span></p></div>
-    <div class="sk"><code>planning-to-done</code><p><span class="lang-th">แตกโจทย์เป็น checklist ครบก่อนลงมือ ปิดงานด้วยหลักฐานรายข้อ</span><span class="lang-en">Extract every requirement first; close with per-item evidence</span></p></div>
-    <div class="sk"><code>scoping-code-changes</code><p><span class="lang-th">diff เล็กตรงโจทย์ ไม่ refactor แถม</span><span class="lang-en">Surgical diffs, no drive-by refactors</span></p></div>
-    <div class="sk"><code>root-causing-bugs</code><p><span class="lang-th">debug แบบตั้งสมมติฐาน–ทดลอง จัดการ flaky แบบสถิติ</span><span class="lang-en">Hypothesis-driven debugging, statistical flake handling</span></p></div>
-    <div class="sk"><code>reviewing-code</code><p><span class="lang-th">หาให้หมดก่อน ค่อยกรอง · ตรวจทุก finding กับโค้ดจริง</span><span class="lang-en">Enumerate all findings, filter late, verify each against source</span></p></div>
-    <div class="sk"><code>delegating-parallel-work</code><p><span class="lang-th">แตกงานให้ sub-agent ทำขนาน แล้วตรวจรวมเองก่อนเชื่อ</span><span class="lang-en">Fan out independent work, trust-but-verify the union</span></p></div>
-    <div class="sk"><code>managing-working-memory</code><p><span class="lang-th">โน้ตที่รอดข้าม session และ compaction</span><span class="lang-en">Notes that survive sessions and compaction</span></p></div>
-    <div class="sk"><code>outcome-first-reporting</code><p><span class="lang-th">สรุปแบบผลลัพธ์ขึ้นก่อน มีหมวด "ยังไม่เสร็จ" ชัดๆ</span><span class="lang-en">Verdict-first reports with an explicit "not done" section</span></p></div>
-    <div class="sk"><code>producing-deliverables</code><p><span class="lang-th">รายงาน/spreadsheet/slide ที่ตรวจข้อมูลก่อนคำนวณ + เปิดไฟล์ทวนก่อนส่ง</span><span class="lang-en">Docs/sheets/decks: profile data first, reopen the file before "done"</span></p></div>
-    <div class="sk"><code>extracting-from-images</code><p><span class="lang-th">อ่านค่าจากภาพแบบ crop–ซูม–ทวนสอบ ไม่เดาจุดที่มองไม่ชัด</span><span class="lang-en">Crop, zoom, transcribe-then-verify — never guess an illegible cell</span></p></div>
-    <div class="sk"><code>inventorying-capabilities</code><p><span class="lang-th">สำรวจเครื่องมือที่มีจริงก่อนบอกว่า "ทำไม่ได้"</span><span class="lang-en">Inventory the real tool surface before saying "can't"</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:vbc</span><code>verifying-before-claiming</code><p><span class="lang-th">พิสูจน์ก่อนพูดว่าเสร็จ — repro บั๊กก่อนแก้ รัน flow จริง อ่าน output ไม่ใช่ exit code</span><span class="lang-en">Prove before claiming — reproduce first, drive the real flow, read output not exit codes</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:ftt</span><code>finishing-the-turn</code><p><span class="lang-th">ไม่ถามเรื่องเล็ก ทำงานจนจบเทิร์น ห้ามจบด้วยคำสัญญา</span><span class="lang-en">No trivial questions, finish the turn, never end on a promise</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:sfc</span><code>search-first-context</code><p><span class="lang-th">ค้น/อ่านก่อนพูดหรือแก้ + งบการอ่านกัน context บวม</span><span class="lang-en">Look before asserting or editing + context-budget discipline</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:ptd</span><code>planning-to-done</code><p><span class="lang-th">แตกโจทย์เป็น checklist ครบก่อนลงมือ ปิดงานด้วยหลักฐานรายข้อ</span><span class="lang-en">Extract every requirement first; close with per-item evidence</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:scc</span><code>scoping-code-changes</code><p><span class="lang-th">diff เล็กตรงโจทย์ ไม่ refactor แถม</span><span class="lang-en">Surgical diffs, no drive-by refactors</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:rcb</span><code>root-causing-bugs</code><p><span class="lang-th">debug แบบตั้งสมมติฐาน–ทดลอง จัดการ flaky แบบสถิติ</span><span class="lang-en">Hypothesis-driven debugging, statistical flake handling</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:rvc</span><code>reviewing-code</code><p><span class="lang-th">หาให้หมดก่อน ค่อยกรอง · ตรวจทุก finding กับโค้ดจริง</span><span class="lang-en">Enumerate all findings, filter late, verify each against source</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:dpw</span><code>delegating-parallel-work</code><p><span class="lang-th">แตกงานให้ sub-agent ทำขนาน แล้วตรวจรวมเองก่อนเชื่อ</span><span class="lang-en">Fan out independent work, trust-but-verify the union</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:mwm</span><code>managing-working-memory</code><p><span class="lang-th">โน้ตที่รอดข้าม session และ compaction</span><span class="lang-en">Notes that survive sessions and compaction</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:ofr</span><code>outcome-first-reporting</code><p><span class="lang-th">สรุปแบบผลลัพธ์ขึ้นก่อน มีหมวด "ยังไม่เสร็จ" ชัดๆ</span><span class="lang-en">Verdict-first reports with an explicit "not done" section</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:pdv</span><code>producing-deliverables</code><p><span class="lang-th">รายงาน/spreadsheet/slide ที่ตรวจข้อมูลก่อนคำนวณ + เปิดไฟล์ทวนก่อนส่ง</span><span class="lang-en">Docs/sheets/decks: profile data first, reopen the file before "done"</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:efi</span><code>extracting-from-images</code><p><span class="lang-th">อ่านค่าจากภาพแบบ crop–ซูม–ทวนสอบ ไม่เดาจุดที่มองไม่ชัด</span><span class="lang-en">Crop, zoom, transcribe-then-verify — never guess an illegible cell</span></p></div>
+    <div class="sk"><span class="sk-short">/f2o:ivc</span><code>inventorying-capabilities</code><p><span class="lang-th">สำรวจเครื่องมือที่มีจริงก่อนบอกว่า "ทำไม่ได้"</span><span class="lang-en">Inventory the real tool surface before saying "can't"</span></p></div>
   </div>
+  <p class="small dim" style="margin-top:10px"><span class="lang-th">พิมพ์ shorthand เรียกสกิลเจาะจงได้ทันที เช่น <code>/f2o:vbc</code> — ชื่อเต็ม <code>/f2o:verifying-before-claiming</code> ก็ใช้ได้เสมอ</span><span class="lang-en">Type a shorthand to load a specific skill on demand, e.g. <code>/f2o:vbc</code> — full names like <code>/f2o:verifying-before-claiming</code> always work too.</span></p>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <h2><span class="lang-th">คำถามที่เจอบ่อย</span><span class="lang-en">FAQ</span></h2>
+  <details class="faq"><summary><span class="lang-th">สกิลพวกนี้ Opus มีในตัวอยู่แล้วไหม?</span><span class="lang-en">Doesn't Opus already have these skills built in?</span></summary>
+    <p><span class="lang-th">ไม่มี — สกิลไม่ใช่ฟีเจอร์ของตัวโมเดล แต่เป็น "ชุดคำสั่งกระบวนการ" ของ Claude Code ที่ F2O ติดตั้งเพิ่มเข้าไป หลังติดตั้งจะใช้ได้ทันที (ออกแบบจูนมาเพื่อ Opus แต่ใช้กับโมเดลอื่นได้)</span><span class="lang-en">No — skills aren't model features; they're process-instruction packages for Claude Code that F2O adds. Available immediately after install (tuned for Opus, but usable with any model).</span></p>
+  </details>
+  <details class="faq"><summary><span class="lang-th">ติดตั้งแล้วเปิดพร้อมกันทั้ง 13 ตัวเลยไหม?</span><span class="lang-en">Do all 13 activate at once?</span></summary>
+    <p><span class="lang-th">มีให้ครบทั้ง 13 และ<b>โหลดเองอัตโนมัติ</b> แต่ไม่ใช่พร้อมกัน — router ของกฎแกนให้โหลด "primary" ทีละตัวตามชนิดงาน (ตัวอื่นเป็นตัวเสริมได้) เพื่อกันคำสั่งท่วมจนคุณภาพตก</span><span class="lang-en">All 13 are available and load <b>automatically</b> — but not simultaneously: the core router loads one primary per task type (others may support) to avoid instruction overload.</span></p>
+  </details>
+  <details class="faq"><summary><span class="lang-th">ถ้า F2O เปิดอยู่แล้วพิมพ์ <code>/f2o:vbc</code> จะเกิดอะไรขึ้น?</span><span class="lang-en">What happens if I type <code>/f2o:vbc</code> while F2O is on?</span></summary>
+    <p><span class="lang-th">เป็นการบังคับโหลดสกิลนั้นเป็น primary ของงานปัจจุบันทันที — อีก 12 ตัว<b>ไม่ได้ถูกปิด</b> ยังโหลดอัตโนมัติตามสถานการณ์ได้เหมือนเดิม (ไม่ใช่โหมด exclusive)</span><span class="lang-en">It force-loads that skill as the primary for the current task — the other 12 are <b>not</b> disabled and still auto-load by situation (not an exclusive mode).</span></p>
+  </details>
+  <details class="faq"><summary><span class="lang-th">ปิด F2O แล้วยังเรียกใช้รายสกิลได้ไหม?</span><span class="lang-en">Can I still use individual skills while F2O is "off"?</span></summary>
+    <p><span class="lang-th">ได้ ถ้าปิดแบบนุ่ม <code>/f2o:off</code> — hook หยุดบังคับและกฎแกนหยุดฉีดตั้งแต่ session ถัดไป แต่สกิลกับ shorthand ยังเรียกได้ปกติ · ส่วนปิดแบบแข็ง <code>claude plugin disable f2o@f2o</code> จะถอดทุกอย่างออกทั้งชุด</span><span class="lang-en">Yes with the soft-off <code>/f2o:off</code> — hooks go silent and core-rule injection stops next session, but skills and shorthands remain invocable. The hard-off <code>claude plugin disable f2o@f2o</code> removes everything.</span></p>
+  </details>
 </section>
 
 <!-- ================= FOOTER ================= -->
