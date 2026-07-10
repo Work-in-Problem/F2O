@@ -199,7 +199,7 @@ JSON</pre>
     <p><span class="lang-th">ไม่ — F2O เป็นไฟล์ instruction + สคริปต์ local ล้วนๆ ไม่มี server ไม่มี telemetry ไม่มี network call ใดๆ ของตัวเอง โค้ดเปิดทั้งหมด ตรวจได้ทุกบรรทัด</span><span class="lang-en">No — F2O is purely local instruction files + scripts. No server, no telemetry, no network calls of its own. Fully open source; audit every line.</span></p>
   </details>
   <details class="faq"><summary><span class="lang-th">อัพเดตเวอร์ชันใหม่ยังไง?</span><span class="lang-en">How do I update?</span></summary>
-    <p><span class="lang-th">สาย plugin: <code>claude plugin marketplace update f2o</code> แล้ว <code>claude plugin update f2o@f2o</code> · สาย npx/manual: รันคำสั่งติดตั้งเดิมซ้ำ (ทับของเก่า)</span><span class="lang-en">Plugin route: <code>claude plugin marketplace update f2o</code> then <code>claude plugin update f2o@f2o</code> · npx/manual route: re-run the original install command (overwrites in place).</span></p>
+    <p><span class="lang-th">เช็คว่ามีของใหม่: <code>/f2o:update</code> · อัพเดต: <code>claude plugin marketplace update f2o</code> แล้ว <code>claude plugin update f2o@f2o</code> · สาย npx/manual: <code>npx skills update</code> หรือรันคำสั่งติดตั้งซ้ำ · ไม่ชอบเวอร์ชันใหม่? ย้อนได้: <code>claude plugin marketplace add Work-in-Problem/F2O@&lt;tag&gt;</code></span><span class="lang-en">Check for updates: <code>/f2o:update</code> · update: <code>claude plugin marketplace update f2o</code> then <code>claude plugin update f2o@f2o</code> · npx/manual: <code>npx skills update</code> or re-run the install command · don't like a release? Roll back: <code>claude plugin marketplace add Work-in-Problem/F2O@&lt;tag&gt;</code></span></p>
   </details>
 </section>
 

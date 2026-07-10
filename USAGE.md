@@ -160,7 +160,9 @@ JSON
 
 ## 6. อัพเดต / ถอนการติดตั้ง
 
-- **อัพเดต:** แก้ที่ต้นทาง (`$SRC`) แล้วรันคำสั่ง copy ขั้น 1–3 ซ้ำ (ทับของเก่า)
+- **อัพเดต (plugin):** เช็คก่อนด้วย `/f2o:update` → `claude plugin marketplace update f2o` → `claude plugin update f2o@f2o`
+- **ย้อนเวอร์ชัน:** `claude plugin marketplace add Work-in-Problem/F2O@<tag>` แล้วติดตั้งใหม่ — รายละเอียด [VERSIONING.md](VERSIONING.md)
+- **อัพเดต (manual/npx):** `npx skills update` หรือรันคำสั่งติดตั้งเดิมซ้ำ (ทับของเก่า)
 - **ถอน skills:** ลบโฟลเดอร์ที่ไม่ต้องการออกจาก `~/.claude/skills/` (เลือกลบรายตัวได้)
 - **ถอน Layer 0:** ลบ `constants.md` และส่วน Fable2Opus ใน `CLAUDE.md` ของโปรเจกต์
 - **ถอน hook:** ลบก้อน `hooks` ใน `.claude/settings.json` (หรือลบไฟล์ถ้าสร้างใหม่ทั้งไฟล์) + ลบ `.claude/hooks/`
