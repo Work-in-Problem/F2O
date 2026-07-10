@@ -73,7 +73,7 @@
   <div class="kicker">FABLE2OPUS — USER GUIDE</div>
   <h1>คู่มือการใช้งาน Fable2Opus</h1>
   <div class="tagline">สอน Claude Opus 4.8 ให้ทำงานด้วย "กระบวนการ" ระดับ Fable 5 — ติดตั้งครั้งเดียว ใช้ได้ทุกโปรเจกต์</div>
-  <div class="meta"><span>เวอร์ชัน 1.2 · กรกฎาคม 2026</span><span>ติดตั้งด้วยคำสั่งเดียว</span><span>ไม่ต้องมีพื้นฐานลึก</span></div>
+  <div class="meta"><span>เวอร์ชัน 1.3 · กรกฎาคม 2026</span><span>ติดตั้งด้วยคำสั่งเดียว</span><span>ไม่ต้องมีพื้นฐานลึก</span></div>
 </div>
 
 <h2><span class="num">1</span>โปรเจกต์นี้คืออะไร</h2>
@@ -145,8 +145,8 @@
 <div class="card step avoid-break">
   <div class="step-title"><span class="badge">ทาง A · แนะนำ</span>Claude Code plugin — ครบทุกชั้น: skills + กฎแกนฉีดอัตโนมัติ + hook</div>
 <pre>claude plugin marketplace add Work-in-Problem/F2O
-claude plugin install fable2opus@f2o</pre>
-  <p style="margin:4px 0 0">หรือพิมพ์ <code>/plugin</code> ในแอปแล้วเลือก marketplace <code>Work-in-Problem/F2O</code> — เปิดใช้แล้วกฎ Layer 0 ถูกฉีดเข้า<b>ทุก</b> session อัตโนมัติ · ปิดชั่วคราว: disable plugin หรือ <code>FABLE2OPUS_HOOKS_OFF=1</code></p>
+claude plugin install f2o@f2o</pre>
+  <p style="margin:4px 0 0">หรือพิมพ์ <code>/plugin</code> ในแอปแล้วเลือก marketplace <code>Work-in-Problem/F2O</code> — เปิดใช้แล้วกฎ Layer 0 ถูกฉีดเข้า<b>ทุก</b> session อัตโนมัติ · ควบคุม: <code>/f2o:off</code> (soft-off — สกิลยังใช้ได้) · <code>/f2o:on</code> · <code>/f2o:status</code> · shorthand: <code>/f2o:vbc</code> ฯลฯ ครบ 13 ตัว</p>
 </div>
 <div class="card step avoid-break">
   <div class="step-title"><span class="badge">ทาง B</span>npx skills — ได้เฉพาะ skills 13 ตัว</div>
@@ -213,7 +213,7 @@ JSON</pre>
   <li>อ่านไฟล์ก่อนแก้ และ<b>ไม่ทำพิธีใหญ่โต</b>กับงานจิ๋ว (กติกา proportionality ทำงาน)</li>
   <li>สรุปปิดงานขึ้นต้นด้วยผลลัพธ์ 1 บรรทัด + หมวด VERIFIED พร้อมคำสั่งที่รันจริง</li>
   <li>ไม่จบเทิร์นด้วย "Want me to also…?" สำหรับสิ่งที่ควรทำต่อเอง</li>
-  <li>เช็คแบบกลไก (ทาง B/C): <code>ls ~/.claude/skills | wc -l</code> ต้องได้ <b>13</b> · ทาง A (plugin): <code>claude plugin list</code> ต้องเห็น <code>fable2opus</code> enabled</li>
+  <li>เช็คแบบกลไก (ทาง B/C): <code>ls ~/.claude/skills | wc -l</code> ต้องได้ <b>13</b> · ทาง A (plugin): <code>claude plugin list</code> ต้องเห็น <code>f2o</code> enabled</li>
 </ul>
 
 <h2><span class="num">8</span>ปัญหาพบบ่อย</h2>

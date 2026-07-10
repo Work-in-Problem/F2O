@@ -1,7 +1,7 @@
 {
-  "name": "fable2opus",
+  "name": "f2o",
   "description": "Teach Opus-tier models the working processes of stronger models: 13 process skills (verification, debugging, scoping, delegation, reporting...) + always-on Layer-0 core rules injected at session start + a claim-gate Stop hook that blocks unverified 'done' claims.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": {
     "name": "Work in Problem"
   },

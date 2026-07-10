@@ -13,7 +13,7 @@
 
 ```
 claude plugin marketplace add Work-in-Problem/F2O
-claude plugin install fable2opus@f2o
+claude plugin install f2o@f2o
 ```
 
 หรือพิมพ์ `/plugin` ในแอปแล้วเลือก marketplace `Work-in-Problem/F2O` — เปิดใช้แล้วกฎ Layer 0 ถูกฉีดเข้า**ทุก** session
@@ -27,6 +27,18 @@ npx skills add Work-in-Problem/F2O --all -y -g
 
 ⚠️ ช่องทางนี้ไม่พกกฎแกน (Layer 0) กับ hook ไปด้วย — skills อ้างอิงกฎแกนอยู่ ต้อง copy `core/CLAUDE-core.md` + `core/constants.md`
 เข้าโปรเจกต์เองตาม [USAGE.md](USAGE.md) §2.5
+
+**คำสั่งควบคุม / Commands** (หลังติดตั้ง plugin — เปิดอัตโนมัติ):
+`/f2o:off` soft-off (hooks เงียบ, สกิลยังใช้ได้) · `/f2o:on` เปิดกลับ · `/f2o:status` ดูสถานะ ·
+hard-off: `claude plugin disable f2o@f2o`
+
+**Shorthands** — เรียกสกิลเจาะจงเป็น primary ได้ทันที (ชื่อเต็มยังใช้ได้เสมอ):
+`/f2o:vbc` verifying-before-claiming · `/f2o:ftt` finishing-the-turn · `/f2o:sfc` search-first-context ·
+`/f2o:ptd` planning-to-done · `/f2o:scc` scoping-code-changes · `/f2o:rcb` root-causing-bugs ·
+`/f2o:rvc` reviewing-code · `/f2o:dpw` delegating-parallel-work · `/f2o:mwm` managing-working-memory ·
+`/f2o:ofr` outcome-first-reporting · `/f2o:pdv` producing-deliverables · `/f2o:efi` extracting-from-images ·
+`/f2o:ivc` inventorying-capabilities
+(สาย manual/npx: `cp -R "$SRC/aliases/." ~/.claude/skills/` → ได้ `/vbc` แบบไม่มี prefix)
 
 **คู่มือเต็ม:** [USAGE.md](USAGE.md) · ฉบับ PDF: [docs/Fable2Opus-User-Guide-TH.pdf](docs/Fable2Opus-User-Guide-TH.pdf)
 

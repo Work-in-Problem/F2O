@@ -57,7 +57,7 @@
 **ช่องทาง A — Claude Code plugin (ครบทุกชั้น: skills + กฎแกนอัตโนมัติ + hook):**
 ```
 claude plugin marketplace add Work-in-Problem/F2O
-claude plugin install fable2opus@f2o
+claude plugin install f2o@f2o
 ```
 (หรือพิมพ์ `/plugin` ในแอปแล้วเลือก marketplace `Work-in-Problem/F2O`) — เปิดใช้แล้วกฎ Layer 0
 จะถูกฉีดเข้า**ทุก** session อัตโนมัติ ปิดชั่วคราวได้ด้วย disable plugin หรือ `FABLE2OPUS_HOOKS_OFF=1`
@@ -67,6 +67,16 @@ claude plugin install fable2opus@f2o
 npx skills add Work-in-Problem/F2O --all -y -g
 ```
 ช่องทางนี้*ไม่พก*กฎแกน (Layer 0) กับ hook — ต้อง copy เองตามขั้น 2–3 ของหัวข้อถัดไป
+
+### คำสั่งควบคุม (ทาง A — หลังติดตั้งเปิดอัตโนมัติ)
+
+- `/f2o:off` — **soft-off**: hook หยุดบังคับทันที, การฉีดกฎ Layer 0 หยุดตั้งแต่ session ถัดไป — แต่สกิลทั้ง 13 และ shorthand ยังเรียกใช้ได้ตามปกติ
+- `/f2o:on` — เปิดกลับ · `/f2o:status` — ดูสถานะปัจจุบัน
+- **hard-off** (ถอดทุกอย่างชั่วคราว): `claude plugin disable f2o@f2o` (มีผล session ถัดไป)
+
+### Shorthand เรียกสกิลเจาะจง
+
+พิมพ์ `/f2o:` แล้วตามด้วยตัวย่อ เช่น `/f2o:vbc` = บังคับโหลด verifying-before-claiming เป็น primary ของงานนั้นทันที (สกิลอื่นยังโหลดอัตโนมัติตามสถานการณ์เหมือนเดิม — ไม่ใช่โหมด exclusive) · ครบทั้ง 13: vbc ftt sfc ptd scc rcb rvc dpw mwm ofr pdv efi ivc · ชื่อเต็ม `/f2o:verifying-before-claiming` ก็ยังใช้ได้เสมอ
 
 ## 2.5 ติดตั้งมือจาก clone (ทางเลือก, ~2 นาที)
 
@@ -78,6 +88,9 @@ git clone https://github.com/Work-in-Problem/F2O.git && SRC="$PWD/F2O"
 # ขั้น 1 — ติดตั้ง skills 13 ตัวแบบ global (ใช้ได้ทุกโปรเจกต์บนเครื่องนี้)
 mkdir -p ~/.claude/skills
 cp -R "$SRC/skills/." ~/.claude/skills/
+
+# (ทางเลือก) shorthand แบบไม่มี prefix: /vbc /ftt ... — ใช้ได้แม้ไม่มี plugin
+cp -R "$SRC/aliases/." ~/.claude/skills/
 
 # ตรวจว่าเข้าครบ (ต้องเห็นชื่อ 13 โฟลเดอร์ เช่น verifying-before-claiming, finishing-the-turn ...)
 ls ~/.claude/skills

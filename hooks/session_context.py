@@ -31,7 +31,9 @@ MAX_CHARS = 1950  # Claude Code persists ~2KB of SessionStart context (measured 
 
 
 def main():
-    if os.environ.get("FABLE2OPUS_HOOKS_OFF") == "1":
+    if os.environ.get("FABLE2OPUS_HOOKS_OFF") == "1" or os.path.exists(
+        os.path.expanduser("~/.claude/f2o.disabled")
+    ):  # soft-off: /f2o:off touches the state file; /f2o:on removes it
         return
 
     try:

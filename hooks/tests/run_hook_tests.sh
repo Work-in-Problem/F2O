@@ -110,6 +110,17 @@ run_case  fallback_tool_after_text  fallback_tool_after_text.input.json  fallbac
 
 echo
 
+# ---------- soft-off state file cases (HOME overridden; real home untouched) ----------
+FAKEHOME="$(mktemp -d)"; mkdir -p "$FAKEHOME/.claude"; touch "$FAKEHOME/.claude/f2o.disabled"
+out=$(HOME="$FAKEHOME" python3 "$TESTS_DIR/../claim_gate.py" <<EOF_SF
+$(cat "$FIX/claim_edit_after_verify.input.json" | python3 -c "import json,sys; d=json.load(sys.stdin); d['transcript_path']='$FIX/claim_edit_after_verify.transcript.jsonl'; print(json.dumps(d))")
+EOF_SF
+); rc=$?
+if [ "$rc" -eq 0 ] && [ -z "$out" ]; then echo "pass  statefile_claim_gate_allow"; PASS=$((PASS+1)); else echo "FAIL  statefile_claim_gate_allow (rc=$rc out=$out)"; FAIL=$((FAIL+1)); fi
+out=$(cd "$(mktemp -d)" && HOME="$FAKEHOME" CLAUDE_PLUGIN_ROOT="$(cd "$TESTS_DIR/../.." && pwd)" python3 "$TESTS_DIR/../session_context.py" <<< '{}' 2>/dev/null); rc=$?
+if [ "$rc" -eq 0 ] && [ -z "$out" ]; then echo "pass  statefile_session_context_empty"; PASS=$((PASS+1)); else echo "FAIL  statefile_session_context_empty"; FAIL=$((FAIL+1)); fi
+rm -rf "$FAKEHOME"
+
 # ---------- session_context.py cases ----------
 SC="$TESTS_DIR/../session_context.py"
 sc_pass=0; sc_fail=0
