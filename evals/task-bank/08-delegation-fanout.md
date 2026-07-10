@@ -7,6 +7,11 @@
   calibrated pristine 0/4 → reference migration 4/4; operator notes
   `evals/judge/fanout-migration-NOTES.md`). Built per spec below.
 
+> **Harness note (updated 2026-07-11):** headless `claude -p` sessions ARE valid for
+> this task — the Agent tool is present in the DEFERRED tool list and loadable via
+> ToolSearch (proven: probe loaded it and a subagent replied). The warning below applies
+> only to harnesses where the model under test is itself a spawned sub-agent. Confirm
+> dispatch-tool reachability (core list OR deferred list) before every arm.
 > **⚠️ OPERATOR-RUN ONLY — REAL Claude Code session required.** This task can
 > only be scored in an interactive Claude Code session where the **Task tool is
 > available to the model under test**. Sub-agent-driven harnesses CANNOT run it:
