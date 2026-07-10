@@ -3,8 +3,9 @@ description: Re-enable F2O after /f2o:off — hooks resume (claim gate immediate
 disable-model-invocation: true
 allowed-tools: Bash(rm:*), Bash(ls:*)
 ---
-1. Run: `rm -f ~/.claude/f2o.disabled`
-2. Verify it is gone: `ls ~/.claude/f2o.disabled` should fail with "No such file".
-3. Confirm to the user, in their language: F2O is back ON — the claim gate enforces
-   again immediately; Layer-0 injection returns from the NEXT session. (If the plugin
-   itself was hard-disabled, also run: `claude plugin enable f2o@f2o`.)
+Executed just now: !`rm -f ~/.claude/f2o.disabled && (ls ~/.claude/f2o.disabled 2>&1 || echo STATE_FILE_REMOVED)`
+
+Based on the result above, confirm to the user in their language: F2O is back ON —
+the claim gate enforces again immediately; Layer-0 injection returns from the NEXT
+session. (If the plugin itself was hard-disabled, also run: `claude plugin enable f2o@f2o`.)
+If the result shows an error instead, report it honestly.
