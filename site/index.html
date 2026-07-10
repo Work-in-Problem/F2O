@@ -177,7 +177,7 @@ JSON</pre>
 <!-- ================= SKILLS ================= -->
 <section>
   <div class="kicker">04 — THE 14 SKILLS</div>
-  <h2><span class="lang-th">Skills ทั้ง 13 ตัว</span><span class="lang-en">The 14 skills</span></h2>
+  <h2><span class="lang-th">Skills ทั้ง 14 ตัว</span><span class="lang-en">The 14 skills</span></h2>
   <div class="skills">
     <div class="sk"><div class="sk-cmd">/f2o:vbc</div><div class="sk-full">/f2o:verifying-before-claiming</div><p><span class="lang-th">พิสูจน์ก่อนพูดว่าเสร็จ — repro บั๊กก่อนแก้ รัน flow จริง อ่าน output ไม่ใช่ exit code</span><span class="lang-en">Prove before claiming — reproduce first, drive the real flow, read output not exit codes</span></p></div>
     <div class="sk"><div class="sk-cmd">/f2o:ftt</div><div class="sk-full">/f2o:finishing-the-turn</div><p><span class="lang-th">ไม่ถามเรื่องเล็ก ทำงานจนจบเทิร์น ห้ามจบด้วยคำสัญญา</span><span class="lang-en">No trivial questions, finish the turn, never end on a promise</span></p></div>
@@ -205,7 +205,7 @@ JSON</pre>
     <p><span class="lang-th">ไม่มี — สกิลไม่ใช่ฟีเจอร์ของตัวโมเดล แต่เป็น "ชุดคำสั่งกระบวนการ" ของ Claude Code ที่ F2O ติดตั้งเพิ่มเข้าไป หลังติดตั้งจะใช้ได้ทันที (ออกแบบจูนมาเพื่อ Opus แต่ใช้กับโมเดลอื่นได้)</span><span class="lang-en">No — skills aren't model features; they're process-instruction packages for Claude Code that F2O adds. Available immediately after install (tuned for Opus, but usable with any model).</span></p>
   </details>
   <details class="faq"><summary><span class="lang-th">ติดตั้งแล้วเปิดพร้อมกันทั้ง 14 ตัวเลยไหม?</span><span class="lang-en">Do all 13 activate at once?</span></summary>
-    <p><span class="lang-th">มีให้ครบทั้ง 13 และ<b>โหลดเองอัตโนมัติ</b> แต่ไม่ใช่พร้อมกัน — router ของกฎแกนให้โหลด "primary" ทีละตัวตามชนิดงาน (ตัวอื่นเป็นตัวเสริมได้) เพื่อกันคำสั่งท่วมจนคุณภาพตก</span><span class="lang-en">All 14 are available and load <b>automatically</b> — but not simultaneously: the core router loads one primary per task type (others may support) to avoid instruction overload.</span></p>
+    <p><span class="lang-th">มีให้ครบทั้ง 14 และ<b>โหลดเองอัตโนมัติ</b> แต่ไม่ใช่พร้อมกัน — router ของกฎแกนให้โหลด "primary" ทีละตัวตามชนิดงาน (ตัวอื่นเป็นตัวเสริมได้) เพื่อกันคำสั่งท่วมจนคุณภาพตก</span><span class="lang-en">All 14 are available and load <b>automatically</b> — but not simultaneously: the core router loads one primary per task type (others may support) to avoid instruction overload.</span></p>
   </details>
   <details class="faq"><summary><span class="lang-th">ถ้า F2O เปิดอยู่แล้วพิมพ์ <code>/f2o:vbc</code> จะเกิดอะไรขึ้น?</span><span class="lang-en">What happens if I type <code>/f2o:vbc</code> while F2O is on?</span></summary>
     <p><span class="lang-th">เป็นการบังคับโหลดสกิลนั้นเป็น primary ของงานปัจจุบันทันที — อีก 12 ตัว<b>ไม่ได้ถูกปิด</b> ยังโหลดอัตโนมัติตามสถานการณ์ได้เหมือนเดิม (ไม่ใช่โหมด exclusive)</span><span class="lang-en">It force-loads that skill as the primary for the current task — the other 12 are <b>not</b> disabled and still auto-load by situation (not an exclusive mode).</span></p>
