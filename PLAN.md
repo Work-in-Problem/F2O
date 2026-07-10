@@ -221,3 +221,13 @@ Fable2Opus/
 - Anthropic migration guide → "Migrating to Claude Fable 5" / "Migrating to Opus 4.8" (behavioral shifts + prompt snippets ทางการ — หลาย snippet ใช้เป็นแกนของ skill ได้ตรงๆ)
 - https://www.anthropic.com/news/claude-fable-5-mythos-5
 - https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5
+
+## v1.4 "The Conductor Release" ✅ 2026-07-11 (ครบวงจร author→PREREG→A/B→ship)
+
+- Gate (baseline-first, ครั้งแรก): T08 0/5 → build · T23 5/5 → candidate ถูกฆ่า (Opus วัดเองเป็น
+  ถ้ามี bench ให้) · T09 5/5 ceiling-by-evasion (เก็บ fixture ไว้เป็น guard)
+- สกิลที่ 14 `conducting-agent-fleets`: A/B ตาม PREREG `73faf84` — **bare 0/5 vs skill 5/5,
+  Fisher p=0.004** · guard 5/5 (รวมการ*ไม่* delegate ที่ถูกต้องบนงานต่ำกว่า C4) · เร็วขึ้น ~25%
+- ค้นพบ: Agent tool = deferred ใน headless (โหลดผ่าน ToolSearch ได้จริง) · jsonl แยก tool_use
+  ต่อบรรทัด ต้อง group ด้วย message.id · แก้ NOTES + task-bank 08/09 แล้ว
+- เหลือ (optional): task 14 ต้อง interactive จริง · delegate-then-verify บน fixture ใหญ่กว่า C4 ยังไม่วัดตรง
