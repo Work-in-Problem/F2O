@@ -90,7 +90,10 @@ SECOND_PERSON_RE = re.compile(r"\byou(?:rs?)?\b", re.I)
 VERIFY_RE = re.compile(
     r"(?:\bpytest\b|\bunittest\b|\btests?\b|\bmake\s|\bnpm\s|\bpnpm\s|\byarn\s"
     r"|\bgo\s+test\b|\bcargo\s|\bbuild\b|\bcheck\b|\blint\b|\btsc\b"
-    r"|run_tests|repeat-run)",
+    r"|run_tests|repeat-run"
+    # live-probe verification: curl-driven checks against a served page/API are
+    # legitimate evidence for web work (observed false-block 2026-07-10)
+    r"|\bcurl\b)",
     re.I,
 )
 

@@ -1,0 +1,3 @@
+{"type": "assistant", "isSidechain": false, "uuid": "a1", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t1", "name": "Edit", "input": {"file_path": "/repo/site/index.html", "old_string": "a", "new_string": "b"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a2", "message": {"role": "assistant", "content": [{"type": "tool_use", "id": "t2", "name": "Bash", "input": {"command": "curl -s https://example.com/ | grep -q Install", "description": "probe live page"}}]}}
+{"type": "assistant", "isSidechain": false, "uuid": "a3", "message": {"role": "assistant", "content": [{"type": "text", "text": "Done \u2014 the page is live and verified."}]}}

@@ -87,6 +87,7 @@ run_case  clean_close               clean_close.input.json              clean_cl
 run_case  promise_end               promise_end.input.json              promise_end.transcript.jsonl              BLOCK   "I'll now run the tests"            0
 run_case  claim_edit_after_verify   claim_edit_after_verify.input.json  claim_edit_after_verify.transcript.jsonl  BLOCK   "CLAUDE.md §1"                      0
 run_case  claim_verify_after_edit   claim_verify_after_edit.input.json  claim_verify_after_edit.transcript.jsonl  ALLOW   ""                                  0
+run_case  curl_verify_after_edit    curl_verify_after_edit.input.json   curl_verify_after_edit.transcript.jsonl   ALLOW   ""                                  0
 run_case  md_edit_after_verify      md_edit_after_verify.input.json     md_edit_after_verify.transcript.jsonl     ALLOW   ""                                  0
 run_case  md_plus_code_edit         md_plus_code_edit.input.json        md_plus_code_edit.transcript.jsonl        BLOCK   "CLAUDE.md §1"                      0
 run_case  tmp_html_edit             tmp_html_edit.input.json            tmp_html_edit.transcript.jsonl            ALLOW   ""                                  0

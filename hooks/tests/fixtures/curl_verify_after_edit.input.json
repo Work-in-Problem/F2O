@@ -1,0 +1,8 @@
+{
+  "session_id": "fixture-session",
+  "transcript_path": "__TRANSCRIPT__",
+  "cwd": "/tmp",
+  "hook_event_name": "Stop",
+  "stop_hook_active": false,
+  "last_assistant_message": "Done \u2014 the page is live and verified."
+}
