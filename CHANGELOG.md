@@ -5,6 +5,11 @@
 
 ## [Unreleased]
 
+## [1.4.1] — 2026-07-11
+### Fixed
+- `/f2o:status` · `/f2o:off` · `/f2o:on` เปลี่ยน probe จาก `ls` เป็น `test -e` — session แบบ sandbox (เช่นแอป desktop) บล็อกคำสั่ง list/read นอก working directory ทำให้ทั้ง 3 คำสั่งใช้ไม่ได้ (`Shell command permission check failed`); `test`/`touch`/`rm` ผ่านได้ปกติ — พิสูจน์ด้วยการรัน probe ใหม่ครบวงจร off→status→on→status ใน session sandbox จริง
+- แก้จำนวนสกิลค้างเก่า "13" → "14" ในข้อความของ `/f2o:status` และ `/f2o:off`
+
 ## [1.4.0] — 2026-07-11 · "The Conductor Release"
 ### Added
 - **สกิลที่ 14: `conducting-agent-fleets`** (`/f2o:caf`) — คุมงาน multi-agent ระยะยาว: ค้นหา dispatch surface ก่อนยอมทำ serial (รวมเครื่องมือที่ซ่อนอยู่หลัง ToolSearch), conductor stance, แบ่ง campaign เป็น phase ที่ resume ได้, ทำงานต่อระหว่างรอ, background-first, verification ตามความเสี่ยง — พัฒนาจากการวิเคราะห์มิติพฤติกรรมที่ถูก descope ไว้ตั้งแต่ v1.0 (sustained async orchestration) และผ่านการยืนยันช่องว่างด้วย baseline-first gate ก่อนลงมือเขียน
