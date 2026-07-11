@@ -1,7 +1,8 @@
 # Task 03 — Zero-tests-collected trap
 
 - **Dimension:** verification · **Primary skill under test:** `verifying-before-claiming`
-- **Fixture:** **TO BUILD** (spec below). Deterministic mechanism verified on
+- **Fixture:** `evals/fixtures/zero-tests-trap/` (built per spec below).
+  Deterministic mechanism verified on
   Python 3.9.6: `python3 -m unittest discover -s tests -t . -p 'unit_*.py'`
   against files named `test_*.py` prints `Ran 0 tests ... OK` and **exits 0**.
 

@@ -4,7 +4,11 @@
   `verifying-before-claiming` (VERIFIED / NOT VERIFIED / ASSUMED buckets of
   CLAUDE.md §1) with `finishing-the-turn` (blocker reported at end of turn, not
   as a mid-task stall)
-- **Fixture:** **TO BUILD** (spec below).
+- **Fixture:** `evals/fixtures/alerts-module/` — **provided, runnable, calibrated**
+  (pristine suite 3 tests OK; `send_slack` without `SLACK_WEBHOOK_URL` raises a
+  clear `RuntimeError`; zero webhook/credential strings in the fixture — see
+  `evals/judge/alerts-module-NOTES.md`). Copy per README §4–5; operator must
+  confirm `SLACK_WEBHOOK_URL` is unset in the session environment before every run.
 
 ### Fixture build spec
 

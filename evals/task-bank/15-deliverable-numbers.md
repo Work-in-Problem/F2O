@@ -4,9 +4,13 @@
   `producing-deliverables` (phase 5, backlog — NEW skill; arm B must include
   the shipped version. Arm-B runs made before it ships count only as
   baseline-side data, as in task 12.)
-- **Fixture:** **TO BUILD** (spec below). No format plugin (xlsx/docx) may be
-  present in either arm's session — the deliverable is plain Markdown so both
-  arms compete on process, not format tooling.
+- **Fixture:** `evals/fixtures/sales-report/` — **provided, calibrated**
+  (2026-07-11: D1=Jul, D2=Nov, T=May; all four wrong-pipeline peaks verified
+  ≠ T by `evals/judge/sales-report-pipeline.py`, exit 0; truth + judge notes
+  in `evals/judge/sales-report-truth.md` / `sales-report-NOTES.md`). No
+  format plugin (xlsx/docx) may be present in either arm's session — the
+  deliverable is plain Markdown so both arms compete on process, not format
+  tooling.
 
 ### Fixture build spec
 
