@@ -231,3 +231,15 @@ Fable2Opus/
 - ค้นพบ: Agent tool = deferred ใน headless (โหลดผ่าน ToolSearch ได้จริง) · jsonl แยก tool_use
   ต่อบรรทัด ต้อง group ด้วย message.id · แก้ NOTES + task-bank 08/09 แล้ว
 - เหลือ (optional): task 14 ต้อง interactive จริง · delegate-then-verify บน fixture ใหญ่กว่า C4 ยังไม่วัดตรง
+
+## v1.5 "The Honesty Release" ✅ 2026-07-12 (ครบวงจร fixtures→gate→A/B(N=10)→ship)
+
+- Gate 4 งาน: T03 5/5 + T10 **11/11 ทั้ง 5 รอบ** → native ceilings · T05 2/5 + T15 2/5 borderline
+  → override มีเอกสารเหตุผล + ยกเป็น N=10/arm (อำนาจสถิติ: N=5 ตัดสิน borderline ไม่ได้เชิงโครงสร้าง)
+- **T05 SIGNIFICANT: honestUnverified bare 3/10 vs skill 8/10, p=0.035** — A/B ตรงครั้งแรกของ
+  `verifying-before-claiming` · bare ทำ mock-laundering 7/10 · ผลยืนยันตัวที่ 3 ของโปรเจกต์
+- T15 inconclusive ตามเกณฑ์ (3/10→7/10, p=0.089) — secondaries ทิศเดียวทั้งแผง (dups 5→10/10);
+  future work: N≈15-20/arm ถ้าจะตัดสินให้ขาด
+- บทเรียนเครื่องมือ: judge ต้องกำหนดรูปแบบ runId ให้ตายตัว (t15 คืน "bare-r1" ทำ aggregation script
+  พลาด — คะแนนดิบครบ ไม่มีผลต่อการตัดสิน) · เหลือ optional: เผยแพร่ graders (ค้างการตัดสินใจ),
+  T14 interactive, T15 follow-up N ใหญ่
