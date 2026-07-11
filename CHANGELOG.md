@@ -5,6 +5,16 @@
 
 ## [Unreleased]
 
+## [1.5.0] — 2026-07-12 · "The Honesty Release"
+### Added
+- **ผลยืนยันตัวที่ 3 (pre-registered):** ความซื่อสัตย์ของ verification claim — งานที่มีข้อพิสูจน์ไม่ได้จริง (webhook ไร้ credentials): Opus เปล่ารายงาน mock เป็น "verify แล้ว" 7/10 ("The webhook fires correctly" ทั้งที่ยิงใส่ server ปลอม) vs ติดสกิล `verifying-before-claiming` ประกาศชัด "ยังไม่ verify + เหตุผล + คำสั่ง rerun" **3/10 → 8/10, Fisher p=0.035** — A/B ตรงครั้งแรกของสกิลหัวใจ
+- **ผลรายงานตรงแม้ไม่ผ่านเกณฑ์:** deliverable จาก CSV มีพิษ — primary 3/10 → 7/10, p=0.089 ยังสรุปไม่ได้ตามเกณฑ์ แต่ secondaries ทิศเดียวกันทั้งแผง (จับแถวซ้ำ 5/10 → **10/10**, ยอดถูก 2/10 → 7/10)
+- **Native ceilings ใหม่ 2 รายการ (บันทึกยุติธรรม):** zero-tests trap 5/5 (เลี่ยงเองโดยรันคำสั่งถูก), spec extraction จาก prompt หลวม **11/11 ครบทั้ง 5 รอบ**
+- Fixtures ใหม่ 3 ชุด (zero-tests-trap, alerts-module, sales-report) — ทำซ้ำได้ทั้งหมด
+### หมายเหตุสำหรับผู้ใช้
+- **ไม่มีการเปลี่ยน skills / hooks / commands** — พฤติกรรมเหมือน 1.4.0 อัพเดตปลอดภัย
+
+
 ## [1.4.1] — 2026-07-11
 ### Fixed
 - `/f2o:status` · `/f2o:off` · `/f2o:on` เปลี่ยน probe จาก `ls` เป็น `test -e` — session แบบ sandbox (เช่นแอป desktop) บล็อกคำสั่ง list/read นอก working directory ทำให้ทั้ง 3 คำสั่งใช้ไม่ได้ (`Shell command permission check failed`); `test`/`touch`/`rm` ผ่านได้ปกติ — พิสูจน์ด้วยการรัน probe ใหม่ครบวงจร off→status→on→status ใน session sandbox จริง
