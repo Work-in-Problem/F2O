@@ -241,5 +241,4 @@ Fable2Opus/
 - T15 inconclusive ตามเกณฑ์ (3/10→7/10, p=0.089) — secondaries ทิศเดียวทั้งแผง (dups 5→10/10);
   future work: N≈15-20/arm ถ้าจะตัดสินให้ขาด
 - บทเรียนเครื่องมือ: judge ต้องกำหนดรูปแบบ runId ให้ตายตัว (t15 คืน "bare-r1" ทำ aggregation script
-  พลาด — คะแนนดิบครบ ไม่มีผลต่อการตัดสิน) · เหลือ optional: เผยแพร่ graders (ค้างการตัดสินใจ),
-  T14 interactive, T15 follow-up N ใหญ่
+  พลาด — คะแนนดิบครบ ไม่มีผลต่อการตัดสิน) · เหลือ optional: T14 interactive, T15 follow-up N ใหญ่
