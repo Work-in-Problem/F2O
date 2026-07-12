@@ -1,0 +1,6 @@
+kind,id,message
+deploy,1,rollout started
+deploy,2,rollout finished
+alert,3,cpu high
+alert,4,cpu normal
+audit,5,config change
